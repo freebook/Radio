@@ -1,0 +1,231 @@
+<!DOCTYPE article SYSTEM "../docbook-5.0b5/dtd/docbook.dtd">
+
+<article>
+	<articleinfo>
+		<title>业余无线电通信 英语900句</title>
+		<subtitle>The Amateur Radio English 900</subtitle>
+		<author>
+			<firstname>BG7NYT</firstname>
+			<surname>Neo Chan</surname>
+			<affiliation>
+				<address>
+					<email>bg7nyt@163.com</email>
+				</address>
+			</affiliation>
+		</author>
+
+		<copyright>
+			<year>2008</year>
+			<holder>bg7nyt</holder>
+		</copyright>
+
+		<abstract>
+			<title>release time:</title>
+			<para>{latest}</para>
+		</abstract>
+	</articleinfo>
+
+	<section>
+		<title>通信语言</title>
+		<section>
+			<title>字幕解释法</title>
+		</section>
+		<section>
+			<title>Q简语</title>
+		</section>
+
+		<section>
+			<title>呼叫</title>
+			<section>
+				<title>广泛呼叫</title>
+				<bridgehead renderas="sect3">CQ CQ CQ This is [CALLSIGN] Standing
+					by</bridgehead>
+				<para>CQ CQ CQ This is BG7NYT BG7NYT BG7NYT Standing by</para>
+				<bridgehead renderas="sect3">CQ CQ CQ DE [CALLSIGN] K</bridgehead>
+				<para>CQ CQ CQ DE BG7NYT BG7NYT BG7NYT K</para>
+			</section>
+			<section>
+				<title>区域呼叫</title>
+				<para>CQ [ Africa | Asia | Europe | North America | Oceania |South
+					America ]</para>
+
+				<para>呼叫欧洲</para>
+				<para>CQ EUROPE, CQ EUROPE, CQ EUROPE</para>
+
+				<para>呼叫本国电台</para>
+				<para>CQ BRAVO, CQ BRAVO, CQ BRAVO </para>
+
+				<para>呼叫本土以外的电台</para>
+				<para>CQ DX, CQ DX, CQ DX</para>
+
+				<para>呼叫竞赛电台</para>
+				<para>CQ CONTEST</para>
+			</section>
+		</section>
+	</section>
+
+	<section>
+		<title>问候语</title>
+		<orderedlist>
+			<title>time</title>
+			<listitem>
+				<para>Good morning</para>
+			</listitem>
+			<listitem>
+				<para>Good afternoon</para>
+			</listitem>
+			<listitem>
+				<para>Good evening</para>
+			</listitem>
+		</orderedlist>
+
+		<orderedlist>
+			<title>encounter</title>
+			<listitem>
+				<para>Hello</para>
+			</listitem>
+			<listitem>
+				<para>It's nice to meet you.</para>
+			</listitem>
+			<listitem>
+				<para>I'm very glad to meet you.</para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+		</orderedlist>
+	</section>
+
+	<section>
+		<title>感激</title>
+		<orderedlist>
+			<title>Thanks</title>
+			<listitem>
+				<para>Thanks</para>
+			</listitem>
+			<listitem>
+				<para>Thank you</para>
+			</listitem>
+			<listitem>
+				<para>Thank you for coming back to my call.</para>
+			</listitem>
+			<listitem>
+				<para>Thanks for your call.</para>
+			</listitem>
+			<listitem>
+				<para>Thanks for the nice QSO.</para>
+			</listitem>
+			<listitem>
+				<para>Thanks for the short QSO.</para>
+			</listitem>
+			<listitem>
+				<para>Thanks for the nice report.</para>
+			</listitem>
+			<listitem>
+				<para>Thank you so much for the best enjoyable contact.</para>
+			</listitem>
+			<listitem>
+				<para>Thank you very much for the information</para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+			<listitem>
+				<para></para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>Don't mention it</para>
+			</listitem>
+			<listitem>
+				<para>You're welcome</para>
+			</listitem>
+			<listitem>
+				<para>I really appreciate this</para>
+			</listitem>
+			<listitem>
+				<para>Thinks for your help.</para>
+			</listitem>
+			<listitem>
+				<para>You've been a big help.</para>
+			</listitem>
+		</orderedlist>
+	</section>
+
+	<section>
+		<title>祝愿</title>
+		<orderedlist>
+			<listitem>
+				<para>Have a good time.</para>
+			</listitem>
+			<listitem>
+				<para>Have a good weekend.</para>
+			</listitem>
+			<listitem>
+				<para>Have a good holiday.</para>
+			</listitem>
+			<listitem>
+				<para>Please drive carefully.</para>
+			</listitem>
+			<listitem>
+				<para>Best wish to you and your family!</para>
+			</listitem>
+			<listitem>
+				<para>Good DX(DXing) and seventy-three.</para>
+			</listitem>
+			<listitem>
+				<para>Good luck and good DX.</para>
+			</listitem>
+			<listitem>
+				<para>Best wish and seventy-three!</para>
+			</listitem>
+			<listitem>
+				<para>Merry christmas and happy new year!</para>
+			</listitem>
+			<listitem>
+				<para>.</para>
+			</listitem>
+			<listitem>
+				<para>.</para>
+			</listitem>
+			<listitem>
+				<para>.</para>
+			</listitem>
+		</orderedlist>
+	</section>
+	<section>
+		<title>呼号有关</title>
+	</section>
+	<section>
+		<title>信号报告</title>
+		<para>roger 收到</para>
+	</section>
+	<section>
+		<title>姓名</title>
+	</section>
+	<section>
+		<title>地址</title>
+	</section>
+	<section>
+		<title>设备</title>
+	</section>
+	<section>
+		<title>电波传播情况</title>
+	</section>
+	<section>
+		<title>QSO情景对话</title>
+	</section>
+</article>

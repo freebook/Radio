@@ -1,0 +1,15 @@
+#!/bin/bash
+mkdir tmp
+cd tmp 
+
+export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/onechunk.xsl
+
+/usr/bin/xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../article.xml
+
+sed "s/{latest}/`date -u`/g" index.html >index.html.sed; mv index.html.sed index.html
+
+mv *.html /home/neo/public_html/ham/english/
+
+cd ..
+rm -rf tmp
+

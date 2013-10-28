@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheet/docbook-article.xsl"?>
+<!DOCTYPE subject SYSTEM "/usr/share/xml/docbook/schema/dtd/5.0/docbook.dtd" [
+
+	<!ENTITY book.info.author.xml		SYSTEM "../common/book.info.author.xml">
+	<!ENTITY book.info.legalnotice.xml	SYSTEM "../common/book.info.legalnotice.xml">
+	<!ENTITY book.info.abstract.xml		SYSTEM "../common/book.info.abstract.xml">
+    <!ENTITY book.preface.xml           SYSTEM "../common/book.preface.xml">
+	<!ENTITY preface.about.me.xml       SYSTEM "../common/about.me.xml">
+	<!ENTITY book.dedication.xml       	SYSTEM "../common/book.dedication.xml">
+	<!ENTITY book.appendix.xml	 		SYSTEM "book.appendix.xml">
+
+	<!ENTITY % doctype.entity.xml 		SYSTEM "doctype.entity.xml">
+	%doctype.entity.xml;
+
+]>
+<book xml:base="http://netkiller.sourceforge.net/ham/"
+	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
+	<info>
+		<title>Netkiller Amateur Radio 手札</title>
+		<subtitle></subtitle>
+		<authorgroup>
+		&book.info.author.xml;
+		</authorgroup>
+
+		<edition>$Revision: 646 $</edition>
+  		<pubdate>$Date: 2013-07-23 14:41:49 +0800 (Tue, 23 Jul 2013) $</pubdate>
+
+		<copyright>
+			<year>2013</year>
+			<!--
+			<year>2014</year>
+			 -->
+			<holder>Neo Chan</holder>
+		</copyright>
+		<releaseinfo>
+			<remark>$Id: book.xml 646 2013-07-23 06:41:49Z netkiller $</remark>
+		</releaseinfo>
+
+		&book.info.legalnotice.xml;
+		<!-- &book.info.abstract.xml; -->
+		<abstract>
+
+		</abstract>
+
+		<keywordset>
+			<keyword>Amateur Radio, ham, ham radio</keyword>
+			<keyword>icom, yaesu, kenwood,</keyword>
+			<keyword>cw,ssb,usb,lsb,am,fm,rtty,fsk,afsk,psk31</keyword>
+			<keyword>fdma,tdma,cdma</keyword>
+			<keyword></keyword>
+		</keywordset>
+	</info>
+
+	<!-- &book.dedication.xml;
+	&book.preface.xml; -->
+
+	&chapter.repeater.xml;
+
+
+</book>
