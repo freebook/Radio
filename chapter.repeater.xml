@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="repeater">
-	<title>中继</title>
-<section id="digital">
 	<title>数字中继</title>
+<section id="digital">
+	<title>数字中继联网方案</title>
 	<ulink url="images/repeater/digital.png">
 		<graphic  format="png" fileref="images/repeater/digital.png" srccredit="neo" />
 	</ulink>
@@ -71,7 +71,7 @@
 	</sidebar>
 	<sidebar>
 		<title>VPN服务器与客户端</title>
-		<para>操作系统 <ulink url="http://ftp.cuhk.edu.hk/pub/Linux/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso">CentOS-6.4-x86_64-minimal.iso</ulink></para>
+		<para>操作系统 <ulink url="http://www.centos.org/">CentOS-6.5-x86_64-minimal.iso</ulink></para>
 		<para>分区规划，适合VPN服务器与客户端:</para>
 		<itemizedlist>
 			<listitem><para>/ 分区 50G</para></listitem>
@@ -80,12 +80,173 @@
 		</itemizedlist>
 	</sidebar>
 </section>
-<!--
-<section id="analog">
+
+<section id="openvpn">
+	<title>VPN服务器</title>
+	<para>请参考下面安装</para>
+	<para><ulink url="http://netkiller.github.io/linux/network/vpn/index.html#openvpn" /></para>
+	<para><ulink url="http://netkiller.github.io/centos/network/openvpn.html" /></para>
+	<section>
+		<title>服务器端</title>
+		<para>启用IP转发</para>
+		<screen>
+# vim /etc/sysctl.conf
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 1
+		</screen>
+		<para>net.ipv4.ip_forward = 1 使IP转发生效</para>
+		<screen>
+sysctl -w net.ipv4.ip_forward=1
+		</screen>
+		<para>安装openvpn按顺序运行即可</para>
+		<screen>
+		<![CDATA[
+yum install openvpn easy-rsa -y
+chkconfig openvpn on
+
+cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/server.conf /etc/openvpn/
+cd /usr/share/easy-rsa/2.0
+
+cat >> vars <<EOF
+# Add by BG7NYT
+export KEY_COUNTRY="CN"
+export KEY_PROVINCE="GD"
+export KEY_CITY="Shenzhen"
+export KEY_ORG="Personal Amateur Radiostations of P.R.China"
+export KEY_EMAIL="bg7nyt@163.com"
+export KEY_CN=http://netkiller.github.io
+export KEY_NAME=BG7NYT
+export KEY_OU=Mototrbo
+EOF
+
+source ./vars
+./clean-all
+./build-ca
+./build-key-server server
+./build-dh
+./build-key node1
+./build-key node2
+
+cp keys/ca.key keys/ca.crt keys/dh1024.pem keys/server.key keys/server.crt /etc/openvpn/
+
+service openvpn start
+
+iptables -A INPUT -p udp --dport 1194 -j ACCEPT
+		]]>
+		</screen>
+		
+	</section>
+	<section>
+		<title>中继节点端</title>
+		<para>启用IP转发</para>
+		<screen>
+# vim /etc/sysctl.conf
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 1
+		</screen>
+		<para>net.ipv4.ip_forward = 1 使IP转发生效</para>
+		<screen>
+sysctl -w net.ipv4.ip_forward=1
+		</screen>
+		<para>安装openvpn客户端</para>
+		<screen>
+		<![CDATA[
+yum install openvpn -y
+chkconfig openvpn on
+cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/client.conf /etc/openvpn/
+		]]>
+		</screen>
+		<para>将build-key生成的节点证书复制到节点服务器/etc/openvpn/目录中</para>
+		<screen>
+cp keys/ca.crt keys/node1.key keys/node1.crt /etc/openvpn/
+		</screen>
+		<para>启动openvpn客户端</para>
+		<screen>
+service openvpn start
+		</screen>
+	</section>
+	<section>
+		<title>测试vpn是否可用</title>
+		<para>3台linux服务器运行openvpn服务后可以看到一个tun0网络适配器，我们相互ping对方的tun0上的IP地址即可，正常应该全部都通，不通请查看防火墙配置。</para>
+		<para>服务器tun0状态</para>
+		<screen>
+# ifconfig tun0
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.8.0.1  P-t-P:10.8.0.2  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:240 (240.0 b)  TX bytes:0 (0.0 b)
+		</screen>
+		<para>节点1的 tun0</para>
+		<screen>
+# ifconfig tun0
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.8.0.10  P-t-P:10.8.0.9  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:25 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:2257 (2.2 KiB)  TX bytes:3757 (3.6 KiB)
+		</screen>
+		<para>服务器到节点</para>
+		<screen>
+# ping 10.8.0.6 -c3
+PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
+64 bytes from 10.8.0.6: icmp_seq=1 ttl=128 time=20.9 ms
+64 bytes from 10.8.0.6: icmp_seq=2 ttl=128 time=20.1 ms
+64 bytes from 10.8.0.6: icmp_seq=3 ttl=128 time=20.1 ms
+
+--- 10.8.0.6 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 20.118/20.414/20.939/0.389 ms
+
+
+# ping 10.8.0.10 -c3
+PING 10.8.0.10 (10.8.0.10) 56(84) bytes of data.
+64 bytes from 10.8.0.10: icmp_seq=1 ttl=64 time=14.4 ms
+64 bytes from 10.8.0.10: icmp_seq=2 ttl=64 time=17.0 ms
+64 bytes from 10.8.0.10: icmp_seq=3 ttl=64 time=14.0 ms
+
+--- 10.8.0.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms
+rtt min/avg/max/mdev = 14.068/15.170/17.005/1.313 ms
+
+		</screen>
+		<para>节点到服务器</para>
+		<screen>
+# ping 10.8.0.1 -c3
+PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
+64 bytes from 10.8.0.1: icmp_seq=1 ttl=64 time=14.0 ms
+64 bytes from 10.8.0.1: icmp_seq=2 ttl=64 time=14.0 ms
+64 bytes from 10.8.0.1: icmp_seq=3 ttl=64 time=15.8 ms
+
+--- 10.8.0.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2018ms
+rtt min/avg/max/mdev = 14.006/14.618/15.831/0.857 ms
+		</screen>
+		<para>节点到节点</para>
+		<screen>
+# ping 10.8.0.6 -c3
+PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
+64 bytes from 10.8.0.6: icmp_seq=1 ttl=128 time=34.1 ms
+64 bytes from 10.8.0.6: icmp_seq=2 ttl=128 time=36.6 ms
+64 bytes from 10.8.0.6: icmp_seq=3 ttl=128 time=33.0 ms
+
+--- 10.8.0.6 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2036ms
+rtt min/avg/max/mdev = 33.047/34.605/36.654/1.520 ms
+		</screen>
+	</section>
+</section>
+</chapter>
+
+<chapter id="analog">
 	<title>模拟中继</title>
+<!--
 	<ulink url="images/repeater/analog.png">
 		<graphic  format="png" fileref="images/repeater/analog.png" srccredit="neo" width="1024"/>
 	</ulink>
-</section>
  -->
 </chapter>
