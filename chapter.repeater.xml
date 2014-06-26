@@ -240,6 +240,29 @@ rtt min/avg/max/mdev = 33.047/34.605/36.654/1.520 ms
 		</screen>
 	</section>
 </section>
+<section id="firmware">
+	<title>Motorola XiR R8200 固件升级教程</title>
+	<para>首先安装附件文件，直接运行“MOTOTRBO_R023002_130005_Repeater.exe”即可</para>
+	<para>进入CPS去读中继配置</para>
+	<graphic  format="png" fileref="images/repeater/update/cps.jpg" srccredit="neo" />
+	<para>进入设备菜单，选择升级</para>
+	<graphic  format="png" fileref="images/repeater/update/device.jpg" srccredit="neo" />
+	<para>可用的固件列表</para>
+	<graphic  format="png" fileref="images/repeater/update/package.jpg" srccredit="neo" />
+	<para>选择固件</para>
+	<graphic  format="png" fileref="images/repeater/update/firmware.jpg" srccredit="neo" />
+	<para>点击“OK”按钮，漫长的等待</para>
+	<para>注意：升级固件，不会清空你的配给配置</para>
+</section>
+<section id="link">
+	<title>Link Establishment</title>
+	<section>
+		<title>Master</title>
+	</section>
+	<section>
+		<title>Peer</title>
+	</section>
+</section>
 </chapter>
 
 <chapter id="analog">
