@@ -255,12 +255,31 @@ rtt min/avg/max/mdev = 33.047/34.605/36.654/1.520 ms
 	<para>注意：升级固件，不会清空你的配给配置</para>
 </section>
 <section id="link">
-	<title>Link Establishment</title>
+	<title>Link Establishment(建立IP链路)</title>
+	<para>准备工作</para>
+	<para>主站点IP地址 192.168.6.1</para>
+	<para>节点点IP地址 192.168.6.2 一次类推</para>
+	<para>我们将中继的一时隙用作IP链路连接，二时隙用作本地通话，这样能做到两个时隙互不影响。</para>
 	<section>
-		<title>Master</title>
+		<title>Master(主站设置)</title>
+		<para>首先设置主站点名称与Radio ID, Site ID</para>
+		<graphic  format="png" fileref="images/repeater/link/general.jpg" srccredit="neo" />
+		<para>设置主站IP地址，注意Master IP为空，我们使用默认的50000端口，注意是UDP协议</para>
+		<graphic  format="png" fileref="images/repeater/link/master.jpg" srccredit="neo" />
+		<para>设置频道，色吗12, IP Site Connect 选择1时隙，如果你想让两个时隙都工作可以选择 Slot 1 and Slot 2。然后填写RX频率，Offset 是差频-5，然后点击“Copy”按钮</para>
+		<graphic  format="png" fileref="images/repeater/link/channel.jpg" srccredit="neo" />
+		<para>最后将配置写入中继</para>
 	</section>
 	<section>
-		<title>Peer</title>
+		<title>Peer(从站设置)</title>
+		<para>设置从站点名称与Radio ID, Site ID 每个ID都不能重复，需要你建站的时候规划好，依次加一即可</para>
+		<graphic  format="png" fileref="images/repeater/link/peer-general.jpg" srccredit="neo" />
+		<para>从站需要填写Master IP, 然后设置从站的IP地址</para>
+		<graphic  format="png" fileref="images/repeater/link/peer.jpg" srccredit="neo" />
+		<para>从站是可以使用DHCP获取IP地址</para>
+		<graphic  format="png" fileref="images/repeater/link/peer-dhcp.jpg" srccredit="neo" />
+		<para>设置频道</para>
+		<graphic  format="png" fileref="images/repeater/link/peer-channel.jpg" srccredit="neo" />
 	</section>
 </section>
 </chapter>
