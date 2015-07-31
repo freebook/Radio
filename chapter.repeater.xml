@@ -2,7 +2,7 @@
 <chapter id="repeater">
 	<title>数字中继</title>
 <section id="digital">
-	<title>数字中继联网方案</title>
+	<title>数字中继VPN联网方案</title>
 	<ulink url="images/repeater/digital.png">
 		<graphic  format="png" fileref="images/repeater/digital.png" srccredit="neo" />
 	</ulink>
@@ -79,7 +79,6 @@
 			<listitem><para>其他暂时保留</para></listitem>
 		</itemizedlist>
 	</sidebar>
-</section>
 
 <section id="openvpn">
 	<title>VPN服务器</title>
@@ -240,6 +239,16 @@ rtt min/avg/max/mdev = 33.047/34.605/36.654/1.520 ms
 		</screen>
 	</section>
 </section>
+
+</section>
+
+<section id="wireless.bridge">
+ 	<title>网线网桥数字链路</title>
+ 	<ulink url="images/repeater/RepeaterWirelessBridge.png">
+		<graphic  format="png" fileref="images/repeater/RepeaterWirelessBridge.png" srccredit="neo" />
+	</ulink>
+</section>
+
 <section id="firmware">
 	<title>Motorola XiR R8200 固件升级教程</title>
 	<para>首先安装附件文件，直接运行“MOTOTRBO_R023002_130005_Repeater.exe”即可</para>

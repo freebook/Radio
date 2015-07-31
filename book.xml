@@ -54,6 +54,7 @@
 	&book.preface.xml; -->
 
 	&chapter.repeater.xml;
+	&chapter.tunnel.xml;
 
 
 </book>
