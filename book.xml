@@ -53,8 +53,9 @@
 	<!-- &book.dedication.xml;
 	&book.preface.xml; -->
 
-	&chapter.repeater.xml;
+	&chapter.mototrbo.xml;
 	&chapter.tunnel.xml;
-
+	&chapter.pi-star.xml;
+	&chapter.mmdvm.xml;
 
 </book>

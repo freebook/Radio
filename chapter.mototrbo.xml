@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="repeater">
+	<title>数字中继</title>
+	<section id="digital">
+		<title>数字中继VPN联网方案</title>
+		<ulink url="images/repeater/digital.png">
+			<graphic format="png" fileref="images/repeater/digital.png" srccredit="neo" />
+		</ulink>
+		<sidebar>
+			<title>设备列表</title>
+			<para>天线，馈线，双工器</para>
+			<para>MOTOTRBO™ DR 3000 Repeater</para>
+			<para>一台有公网IP的VPN服务器， 配置没有特别要求</para>
+			<para>两台VPN客户端，需要两个网口。不需要公网IP</para>
+			<para>网线，水晶头，工具等等</para>
+		</sidebar>
+		<sidebar>
+			<title>需求描述</title>
+			<para>一期，迫切解决的问题：</para>
+			<orderedlist>
+				<listitem>
+					<para>将目前已建成的两部数字中继通过TCP/IP互连</para>
+				</listitem>
+				<listitem>
+					<para>实现手持机在中继网间漫游</para>
+				</listitem>
+				<listitem>
+					<para>实现分组呼叫</para>
+				</listitem>
+			</orderedlist>
+			<para>同时要考虑到后面的扩容问题：</para>
+			<orderedlist>
+				<listitem>
+					<para>与其他临近城市的互通问题。</para>
+				</listitem>
+				<listitem>
+					<para>APRS</para>
+				</listitem>
+				<listitem>
+					<para>YY或Echolink 接入问题</para>
+				</listitem>
+				<listitem>
+					<para>与模拟网的互通问题</para>
+				</listitem>
+				<listitem>
+					<para>与Voip协议SIP或H.323互通</para>
+				</listitem>
+				<listitem>
+					<para>中继录音域mp3流服务器播放</para>
+				</listitem>
+			</orderedlist>
+		</sidebar>
+		<sidebar>
+			<title>背景</title>
+			<para>互连 DR-3000中继需要公网IP，无法使用动态IP技术。</para>
+			<para>通过VPN技术建立虚拟专用网实现两个中继相互通信，同时VPN服务器也可以采用动态IP+域名的方案，定时将IP地址更新到域名服务器，然后VPN客户端通过域名与VPN服务器建立连接。实现两台中继的网络互通。</para>
+			<para>允许多个VPN客户端与服务器建立连接，这样就解决了扩容问题。</para>
+		</sidebar>
+		<sidebar>
+			<title>频率与时隙规划</title>
+			<para>采用异频同播模式</para>
+			<para>1号中继：439.790 -5 12 1 </para>
+			<para>2号中继：439.200 -5 12 1 </para>
+		</sidebar>
+		<sidebar>
+			<title>IP地址规划</title>
+			<para>LAN IP: 172.16.0.0/24</para>
+			<para>VPN IP: 10.8.0.0/24</para>
+
+			<para>1号中继：172.16.0.1/24 </para>
+			<para>2号中继：172.16.0.2/24 </para>
+			<para>控制台：172.16.0.254/24 </para>
+		</sidebar>
+		<sidebar>
+			<title>物理网络拓扑图</title>
+			<screen>
+		<![CDATA[
+                                      .-----------------------------> tun0  [ VPN Server ] tun0 <-----------------------.
+                                     /                                            |                                      \
+                                    /                                          Switch                                     \
+                                    |                                             |                                        \
+                                    |                                          Router                                       |
+                                    V                                             ^                                         V
+                                   tun0                                           |                                        tun0
+天线 ---> 双工器 ---> 中继台 ---> eth1 [VPN Client] eth0 ---> Switch ---> Router ---> ( WAN ) <--- Router <--- Switch <--- eth0 [VPN Client] eth1 <--- 中继台 <--- 双工器  <--- 天线
+		]]>
+			</screen>
+			<para>client tun0 与 server tun0通过tun0虚拟接口 建立了一条虚拟链路，实际上仍然通过eth0物理链路与服务器连接。通过路由表的走向可以将172.16.0.0/24网络打通。</para>
+		</sidebar>
+		<sidebar>
+			<title>VPN服务器与客户端</title>
+			<para>
+				操作系统
+				<ulink url="http://www.centos.org/">CentOS-6.5-x86_64-minimal.iso</ulink>
+			</para>
+			<para>分区规划，适合VPN服务器与客户端:</para>
+			<itemizedlist>
+				<listitem>
+					<para>/ 分区 50G</para>
+				</listitem>
+				<listitem>
+					<para>Swap 分区 内存*2，如果大于16G内存，使用与内存相等即可</para>
+				</listitem>
+				<listitem>
+					<para>其他暂时保留</para>
+				</listitem>
+			</itemizedlist>
+		</sidebar>
+
+		<section id="openvpn">
+			<title>VPN服务器</title>
+			<para>请参考下面安装</para>
+			<para>
+				<ulink url="http://netkiller.github.io/linux/network/vpn/index.html#openvpn" />
+			</para>
+			<para>
+				<ulink url="http://netkiller.github.io/centos/network/openvpn.html" />
+			</para>
+			<section>
+				<title>服务器端</title>
+				<para>启用IP转发</para>
+				<screen>
+		<![CDATA[
+# vim /etc/sysctl.conf
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 1
+		]]>
+				</screen>
+				<para>net.ipv4.ip_forward = 1 使IP转发生效</para>
+				<screen>
+		<![CDATA[
+sysctl -w net.ipv4.ip_forward=1
+		]]>
+				</screen>
+				<para>安装openvpn按顺序运行即可</para>
+				<screen>
+		<![CDATA[
+yum install openvpn easy-rsa -y
+chkconfig openvpn on
+
+cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/server.conf /etc/openvpn/
+cd /usr/share/easy-rsa/2.0
+
+cat >> vars <<EOF
+# Add by BG7NYT
+export KEY_COUNTRY="CN"
+export KEY_PROVINCE="GD"
+export KEY_CITY="Shenzhen"
+export KEY_ORG="Personal Amateur Radiostations of P.R.China"
+export KEY_EMAIL="bg7nyt@163.com"
+export KEY_CN=http://netkiller.github.io
+export KEY_NAME=BG7NYT
+export KEY_OU=Mototrbo
+EOF
+
+source ./vars
+./clean-all
+./build-ca
+./build-key-server server
+./build-dh
+./build-key node1
+./build-key node2
+
+cp keys/ca.key keys/ca.crt keys/dh1024.pem keys/server.key keys/server.crt /etc/openvpn/
+
+service openvpn start
+
+iptables -A INPUT -p udp --dport 1194 -j ACCEPT
+		]]>
+				</screen>
+
+			</section>
+			<section>
+				<title>中继节点端</title>
+				<para>启用IP转发</para>
+				<screen>
+		<![CDATA[
+# vim /etc/sysctl.conf
+# Controls IP packet forwarding
+net.ipv4.ip_forward = 1
+		]]>
+				</screen>
+				<para>net.ipv4.ip_forward = 1 使IP转发生效</para>
+				<screen>
+		<![CDATA[
+sysctl -w net.ipv4.ip_forward=1
+		]]>
+				</screen>
+				<para>安装openvpn客户端</para>
+				<screen>
+		<![CDATA[
+yum install openvpn -y
+chkconfig openvpn on
+cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/client.conf /etc/openvpn/
+		]]>
+				</screen>
+				<para>将build-key生成的节点证书复制到节点服务器/etc/openvpn/目录中</para>
+				<screen>
+		<![CDATA[
+cp keys/ca.crt keys/node1.key keys/node1.crt /etc/openvpn/
+		]]>
+				</screen>
+				<para>启动openvpn客户端</para>
+				<screen>
+		<![CDATA[
+service openvpn start
+		]]>
+				</screen>
+			</section>
+			<section>
+				<title>测试vpn是否可用</title>
+				<para>3台linux服务器运行openvpn服务后可以看到一个tun0网络适配器，我们相互ping对方的tun0上的IP地址即可，正常应该全部都通，不通请查看防火墙配置。</para>
+				<para>服务器tun0状态</para>
+				<screen>
+		<![CDATA[
+# ifconfig tun0
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.8.0.1  P-t-P:10.8.0.2  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:240 (240.0 b)  TX bytes:0 (0.0 b)
+        ]]>
+				</screen>
+				<para>节点1的 tun0</para>
+				<screen>
+		<![CDATA[
+# ifconfig tun0
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.8.0.10  P-t-P:10.8.0.9  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:25 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:2257 (2.2 KiB)  TX bytes:3757 (3.6 KiB)
+        ]]>
+				</screen>
+				<para>服务器到节点</para>
+				<screen>
+		<![CDATA[
+# ping 10.8.0.6 -c3
+PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
+64 bytes from 10.8.0.6: icmp_seq=1 ttl=128 time=20.9 ms
+64 bytes from 10.8.0.6: icmp_seq=2 ttl=128 time=20.1 ms
+64 bytes from 10.8.0.6: icmp_seq=3 ttl=128 time=20.1 ms
+
+--- 10.8.0.6 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 20.118/20.414/20.939/0.389 ms
+
+
+# ping 10.8.0.10 -c3
+PING 10.8.0.10 (10.8.0.10) 56(84) bytes of data.
+64 bytes from 10.8.0.10: icmp_seq=1 ttl=64 time=14.4 ms
+64 bytes from 10.8.0.10: icmp_seq=2 ttl=64 time=17.0 ms
+64 bytes from 10.8.0.10: icmp_seq=3 ttl=64 time=14.0 ms
+
+--- 10.8.0.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms
+rtt min/avg/max/mdev = 14.068/15.170/17.005/1.313 ms
+		]]>
+				</screen>
+				<para>节点到服务器</para>
+				<screen>
+		<![CDATA[
+# ping 10.8.0.1 -c3
+PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
+64 bytes from 10.8.0.1: icmp_seq=1 ttl=64 time=14.0 ms
+64 bytes from 10.8.0.1: icmp_seq=2 ttl=64 time=14.0 ms
+64 bytes from 10.8.0.1: icmp_seq=3 ttl=64 time=15.8 ms
+
+--- 10.8.0.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2018ms
+rtt min/avg/max/mdev = 14.006/14.618/15.831/0.857 ms
+		]]>
+				</screen>
+				<para>节点到节点</para>
+				<screen>
+		<![CDATA[
+# ping 10.8.0.6 -c3
+PING 10.8.0.6 (10.8.0.6) 56(84) bytes of data.
+64 bytes from 10.8.0.6: icmp_seq=1 ttl=128 time=34.1 ms
+64 bytes from 10.8.0.6: icmp_seq=2 ttl=128 time=36.6 ms
+64 bytes from 10.8.0.6: icmp_seq=3 ttl=128 time=33.0 ms
+
+--- 10.8.0.6 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2036ms
+rtt min/avg/max/mdev = 33.047/34.605/36.654/1.520 ms
+		]]>
+				</screen>
+			</section>
+		</section>
+
+	</section>
+
+	<section id="wireless.bridge">
+		<title>网线网桥数字链路</title>
+		<ulink url="images/repeater/RepeaterWirelessBridge.png">
+			<graphic format="png" fileref="images/repeater/RepeaterWirelessBridge.png" srccredit="neo" />
+		</ulink>
+	</section>
+
+	<section id="firmware">
+		<title>Motorola XiR R8200 固件升级教程</title>
+		<para>首先安装附件文件，直接运行“MOTOTRBO_R023002_130005_Repeater.exe”即可</para>
+		<para>进入CPS去读中继配置</para>
+		<graphic format="png" fileref="images/repeater/update/cps.jpg" srccredit="neo" />
+		<para>进入设备菜单，选择升级</para>
+		<graphic format="png" fileref="images/repeater/update/device.jpg" srccredit="neo" />
+		<para>可用的固件列表</para>
+		<graphic format="png" fileref="images/repeater/update/package.jpg" srccredit="neo" />
+		<para>选择固件</para>
+		<graphic format="png" fileref="images/repeater/update/firmware.jpg" srccredit="neo" />
+		<para>点击“OK”按钮，漫长的等待</para>
+		<para>注意：升级固件，不会清空你的配给配置</para>
+	</section>
+	<section id="link">
+		<title>Link Establishment(建立IP链路)</title>
+		<para>准备工作</para>
+		<para>主站点IP地址 192.168.6.1</para>
+		<para>节点点IP地址 192.168.6.2 一次类推</para>
+		<para>我们将中继的一时隙用作IP链路连接，二时隙用作本地通话，这样能做到两个时隙互不影响。</para>
+		<section>
+			<title>Master(主站设置)</title>
+			<para>首先设置主站点名称与Radio ID, Site ID</para>
+			<graphic format="png" fileref="images/repeater/link/general.jpg" srccredit="neo" />
+			<para>设置主站IP地址，注意Master IP为空，我们使用默认的50000端口，注意是UDP协议</para>
+			<graphic format="png" fileref="images/repeater/link/master.jpg" srccredit="neo" />
+			<para>设置频道，色吗12, IP Site Connect 选择1时隙，如果你想让两个时隙都工作可以选择 Slot 1 and Slot 2。然后填写RX频率，Offset 是差频-5，然后点击“Copy”按钮</para>
+			<graphic format="png" fileref="images/repeater/link/channel.jpg" srccredit="neo" />
+			<para>最后将配置写入中继</para>
+		</section>
+		<section>
+			<title>Peer(从站设置)</title>
+			<para>设置从站点名称与Radio ID, Site ID 每个ID都不能重复，需要你建站的时候规划好，依次加一即可</para>
+			<graphic format="png" fileref="images/repeater/link/peer-general.jpg" srccredit="neo" />
+			<para>从站需要填写Master IP, 然后设置从站的IP地址</para>
+			<graphic format="png" fileref="images/repeater/link/peer.jpg" srccredit="neo" />
+			<para>从站是可以使用DHCP获取IP地址</para>
+			<graphic format="png" fileref="images/repeater/link/peer-dhcp.jpg" srccredit="neo" />
+			<para>设置频道</para>
+			<graphic format="png" fileref="images/repeater/link/peer-channel.jpg" srccredit="neo" />
+		</section>
+	</section>
+	<section id="tms">
+		<title>Mototrbo 数字电台短信协议分析</title>
+		<section id="">
+			<title>IP Address 与 Radio ID 相互转换</title>
+
+			<para>DMR 网络</para>
+			<para>Mototrbo DMR 实际上就是 TCP/IP网络的延伸。我们可以理解为就是一个TCP/IP网络。</para>
+			<para>首先Radio ID （八位数字）就是 IP地址的后三位,色码就是IP地址的第一位。例如 12 色码对应IP地址就是 12.0.0.0</para>
+			<para>色码加上RadioID通过算法就能实现 Radio ID 与 IP 地址的相互转换,组呼可以理解为通过子网掩码控制广播域，在相同子网下的IP地址可以接收组播信息。</para>
+			<para>代码如下：</para>
+			<screen>
+		<![CDATA[
+class Protocol():
+	def __init__(self, buffer = None):
+		self.buffer = buffer
+	def header(self):
+	   return(self.message)
+	def message(self):
+		return(self.message)
+	def id2ip(self, cai, id):
+		return (str(cai)+"."+str((id >> 16) & 0xff) +'.'+ str((id >> 8) & 0xff) + '.' + str(id & 0xff));
+	def ip2id(self, ipaddr):
+		a, b, c, d = ipaddr.split('.');
+		return ((int(b) << 16) + (int(c) << 8 ) + int(d))		
+		]]>
+			</screen>
+			<para>id2ip 是Radio ID 转 IP 地址，算法如下</para>
+			<screen>
+		<![CDATA[
+(str(cai)+"."+str((id >> 16) & 0xff) +'.'+ str((id >> 8) & 0xff) + '.' + str(id & 0xff))
+		]]>
+			</screen>
+			<para>ip2id 是 IP 地址 转 Radio ID</para>
+			<screen>
+		<![CDATA[
+a, b, c, d = ipaddr.split('.')
+((int(b) << 16) + (int(c) << 8 ) + int(d))	
+		]]>
+			</screen>
+		</section>
+		<section id="">
+			<title>检查 Radio 状态</title>
+			<para>判断电台是否开机</para>
+			<para>数字电台使用的多了，就不想喊CQ了，直接进入通信录，找到朋友，检查状态。如果对方在线就会出现一个绿色的"对号",同时对方也会振铃。</para>
+			<para>其实我们判断电台是否开机很简单。每个电台都是一计算机终端，色码 + Radio ID 就能算出对方的IP 地址，然后直接 ping 对方的IP地址就可以了。</para>
+			<screen>
+			<![CDATA[
+工具程序地址： https://github.com/netkiller/Mototrbo/blob/master/Mototrbo.py
+
+#直接 ping IP 地址             
+os.system("ping %s" % self.options.ping) 
+
+# ping radio id 需要做一次转换            
+os.system("ping %s" % protocol.id2ip(int(self.options.cai), int(self.options.online)))
+		
+		]]>
+			</screen>
+		</section>
+		<section>
+			<title>TMS 短信协议分析</title>
+			<graphic format="png" fileref="images/mototrbo/MototrboTMS.png" srccredit="neo" width=""/>
+			<para>头部：0x00开始，然后是短信内容的长度，0x0e 0x00 分割，然后是序号,最后是 0x04 结尾 内容：\r回车符,0x00,换行符\n,信息内容，0x00结束,短信的字符集是 utf-16</para>
+			<para>一条完整短信最终协议包如下：</para>
+			<screen>
+			<![CDATA[
+b'\x00\x14\xe0\x00\x88\x04\r\x00\n\x00B\x00G\x007\x00N\x00Y\x00T\x00'			
+			]]>
+			</screen>
+			<para>上面短信的内容就是 BG7NYT </para>
+			<para>短信发送</para>
+			<screen>
+			<![CDATA[
+class TMS(Protocol):
+	def __init__(self, buffer = None):
+		super().__init__(buffer)
+		self.port = 4007
+		if buffer :
+			self.header = self.buffer[:6]
+			self.message = self.buffer[6:]
+	def encode(self, msg):
+		return(msg.encode('utf-16').replace(b'\xff\xfe', b'\x00'))
+
+	def decode(self, msg = None):
+		if msg :
+			return( msg.replace(b'\x00', b'\xff\xfe', 1).decode('utf-16') )
+		else:
+			return( self.message.decode('utf-16') )
+	def sequence(self):
+		return(self.header[4:5])
+	def lenght(self):
+		return (len(self.message))
+	def sendtoip(self, ipaddr, sms):
+		import socket
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+		message = self.encode(sms)
+		length = len(message)+7
+		#print(hex(length))
+		protocol = b'\x00'+ bytes([length])+ b'\xe0\x00\x88\x04\r\x00\n' + message
+		#print(protocol)		
+		sock.sendto(protocol, (ipaddr, self.port))
+	def sendtoid(self, cai, radioid, sms):
+		ipaddr = self.id2ip(cai, radioid)
+		self.sendtoip(ipaddr, sms)
+	def debug(self):
+		protocol = b'\x00\x14\xe0\x00\x88\x04\r\x00\n\x00B\x00G\x007\x00N\x00Y\x00T\x00'
+		tms = TMS(protocol)
+		
+		#print(tms.id2ip(7558888))
+		#print(tms.ip2id('12.115.86.232'))
+		#print(tms.ip2id('12.115.86.12'))
+		#print(tms.ip2id('12.115.52.56'))
+		#print(tms.ip2id('192.168.11.1'))
+		#print(tms.id2ip(11012865))
+		print(tms.message)
+		
+		print(tms.lenght())
+		
+		print(tms.encode('BG7NYT'))
+		print(tms.decode(tms.encode('BG7NYT')))
+		
+		tmp = TMS(b'\x00\x16\xe0\x00\x83\x04\r\x00\n\x00B\x00e\x00l\x00i\x00e\x00v\x00e\x00')
+		print(tmp.decode())
+		print('= Send')
+
+		#.replace(b'\x00', b'')
+		#header = protocol[:6]
+		#message = protocol[9:]
+		#print(tms.decode(message))				
+			]]>
+			</screen>
+			<para>编码和解码</para>
+			<para>因为我们目前计算机通常使用UTF-8字符集，所以短信需要编码为 UTF-16 才能发送，否则在终端上看到的是乱码。 同理计算机收到来自电台的短信也需要解码 UTF-16才能阅读。代码如下</para>
+			<screen>
+			<![CDATA[
+	def encode(self, msg):
+		return(msg.encode('utf-16').replace(b'\xff\xfe', b'\x00'))
+
+	def decode(self, msg = None):
+		if msg :
+			return( msg.replace(b'\x00', b'\xff\xfe', 1).decode('utf-16') )
+		else:
+			return( self.message.decode('utf-16') )			
+			]]>
+			</screen>
+			<para>短信的发送</para>
+			<para>发送短信很简单,通过色码 + Radio ID　计算出对方的IP地址。UDP协议与对方IP地址建立连接，然后发送,代码如下：</para>
+			<screen>
+			<![CDATA[
+	def sendtoip(self, ipaddr, sms):
+		import socket
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+		message = self.encode(sms)
+		length = len(message)+7
+		#print(hex(length))
+		protocol = b'\x00'+ bytes([length])+ b'\xe0\x00\x88\x04\r\x00\n' + message
+		#print(protocol)		
+		sock.sendto(protocol, (ipaddr, self.port))			
+			]]>
+			</screen>
+			<para>程序运行后对方的电台就会收到你的短信。</para>
+			<para>到此为止，我也曾经尝试分析 ARS，LRRP ......等等协议，很想实现ARS将GPS坐标抓出来，放到地图上，实现aprs.is那样的功能。 逆向工程太复杂，放弃了。</para>
+			<para>相关软件：https://github.com/netkiller/Mototrbo</para>
+		</section>
+	</section>
+</chapter>
+<!-- <chapter id="analog"> <title>模拟中继</title> <ulink url="images/repeater/analog.png">  </ulink> </chapter> -->
