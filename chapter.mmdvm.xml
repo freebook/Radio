@@ -6,6 +6,34 @@
 	<para>首先你需要</para>
 	<graphic format="png" fileref="images/mmdvm/MMDVM.png" />
 	<para>事实上，我们可以单独部署 MMDVMHost，目前已知 MMDVMHost 可以运行在 Linux，Mac OS，Windows系统上。</para>
+	<section id="mmdvm.user">
+		<title>创建 MMDVM 用户</title>
+		<para>创建 mmdvm 用户，添加 mmdvm 用户到 dialout 组</para>
+		<screen>
+		<![CDATA[
+useradd mmdvm -s /sbin/nologin
+usermod mmdvm -G dialout
+		]]>
+		</screen>
+		<para>因为 /dev/ttyAMA0 和 /dev/ttyUSB0 设备文件，需要设置成 dialout 组的用户才能访问。</para>
+		<screen>
+		<![CDATA[
+pi-star@netkiller(ro):~$ ls -l /dev/ttyAMA0
+crw-rw---- 1 root dialout 204, 64 Nov 16 22:17 /dev/ttyAMA0
+		
+neo@netkiller ~ % ll /dev/ttyUSB0 
+crw-rw---- 1 root dialout 188, 0 Nov 16 21:40 /dev/ttyUSB0		
+		]]>
+		</screen>
+		<para>如果你想使用费 dialout 用户访问，可以这样设置</para>
+		<screen>
+		<![CDATA[
+neo@netkiller ~ % sudo chmod o+rw /dev/ttyUSB0
+neo@netkiller ~ % ll /dev/ttyUSB0
+crw-rw-rw- 1 root dialout 188, 0 Nov 16 21:40 /dev/ttyUSB0
+		]]>
+		</screen>
+	</section>
 	<section id="YSFClients">
 		<title>YSFClients</title>
 		<para>因为 MMDVMHost 需要连接到 YSFGateway 才能工作。所以我们先安装 YSFGateway。</para>
@@ -23,7 +51,10 @@ cd YSFClients/YSFGateway
 make
 sudo cp YSFGateway /srv/mmdvm/bin
 sudo cp YSFGateway.ini /srv/mmdvm/etc
-sudo cp FCSRooms.txt  YSFHosts.txt /srv/mmdvm/etc 
+sudo cp FCSRooms.txt  YSFHosts.txt /srv/mmdvm/etc
+
+sudo cp YSFHostsupdate.sh /srv/mmdvm/bin
+sudo chmod +x /srv/mmdvm/bin/YSFHostsupdate.sh
 			]]>
 			</screen>
 			<para>查找中国反射器</para>
@@ -34,6 +65,24 @@ neo@netkiller /tmp % cat /srv/mmdvm/etc/YSFHosts.txt | grep China
 82442;CN China #2;W24269/TG46072;116.6.107.115;42006;000;http://ufozhuzi.tpddns.cn:8081/
 86319;CN China #3;C4FM;123.58.6.137;42000;002;http://123.58.6.137:8088/
 08408;CN CN-China-4;P25;47.105.33.47;42003;001;http://www.bg3hbr.cn/xiuno			
+			]]>
+			</screen>
+			<para>YSFHosts.txt 需要定时更新，使用 YSFHostsupdate.sh 脚本，需要简单配置一下</para>
+			<screen>
+			<![CDATA[
+sudo vim /srv/mmdvm/bin/YSFHostsupdate.sh 
+
+# Full path to YSFHosts
+YSFHOSTS=/path/to/YSFHosts.txt
+改为
+YSFHOSTS=/srv/mmdvm/etc/YSFHosts.txt
+			]]>
+			</screen>
+			<para>也可以在 crontab 中更新</para>
+			<screen>
+			<![CDATA[
+# sudo crontab -e
+*/5 * * * * wget -O /srv/mmdvm/etc/YSFHosts.txt http://register.ysfreflector.de/export_csv.php			
 			]]>
 			</screen>
 			<para>配置 YSFGateway</para>
@@ -146,21 +195,47 @@ M: 2018-11-16 14:41:00.594 Connected to the APRS server
 			<para></para>
 			<screen>
 			<![CDATA[
-			
+cd YSFClients/YSFParrot
+make
+sudo cp YSFParrot /srv/mmdvm/bin
 			]]>
 			</screen>
 		</section>
+		<section id="YSFReflector">
+			<title>YSFReflector</title>
+			<screen>
+			<![CDATA[
+cd ../YSFReflector
+make
+sudo cp YSFReflector /srv/mmdvm/bin
+sudo cp YSFReflector.ini /srv/mmdvm/etc
+
+sudo cp YSFReflector.sh /srv/mmdvm/bin 
+sudo chmod +x /srv/mmdvm/bin/YSFReflector.sh 		
+			]]>
+			</screen>
+		</section>
+	</section>
+	<section id="DMRGateway">
+		<title>DMRGateway</title>
+		<screen>
+		<![CDATA[
+cd /usr/local/src
+git clone https://github.com/g4klx/DMRGateway.git
+cd DMRGateway
+make
+sudo cp DMRGateway /srv/mmdvm/bin
+sudo cp DMRGateway.ini /srv/mmdvm/etc
+
+sudo cp XLXHostsupdate.sh /srv/mmdvm/bin
+sudo chmod +x /srv/mmdvm/bin/XLXHostsupdate.sh
+		]]>
+		</screen>
 	</section>
 	<section id="MMDVMHost">
 		<title>MMDVMHost</title>
 		<section>
 			<title>编译安装 MMDVMHost</title>
-			<screen>
-			<![CDATA[
-useradd mmdvm -s /sbin/nologin
-usermod mmdvm -G dialout
-			]]>
-			</screen>
 			<screen>
 			<![CDATA[
 neo@netkiller ~ % cd /usr/local/src 
@@ -758,7 +833,7 @@ I: 2018-11-16 14:21:11.302 MMDVM protocol version: 1, description: MMDVM 2018072
 		</section>
 
 	</section>
-	
+
 	<section id="MMDVMCal">
 		<title>MMDVMCal</title>
 		<para>MMDVMCal 是用来调试 DMR 的工具</para>
@@ -774,12 +849,54 @@ sudo cp MMDVMCal /srv/mmdvm/bin
 # sudo /srv/mmdvm/bin/MMDVMCal /dev/ttyACM0		
 		]]>
 		</screen>
+		<screen>
+		<![CDATA[
+neo@netkiller /usr/local/src/MMDVMCal % ./MMDVMCal /dev/ttyUSB0 
+Version: 1, description: MMDVM 20180723 (D-Star/DMR/System Fusion/P25/NXDN/POCSAG) 12.2880 MHz (Build: 12:21:05 Aug 27 2018)
+The commands are:
+    H/h      Display help
+    Q/q      Quit
+    W/w      Enable/disable modem debug messages
+    I        Toggle transmit inversion
+    i        Toggle receive inversion
+    O        Increase TX DC offset level
+    o        Decrease TX DC offset level
+    C        Increase RX DC offset level
+    c        Decrease RX DC offset level
+    P/p      Toggle PTT inversion
+    R        Increase receive level
+    r        Decrease receive level
+    T        Increase transmit level
+    t        Decrease transmit level
+    d        D-Star Mode
+    D        DMR Deviation Mode (Adjust for 2.75Khz Deviation)
+    L/l      DMR Low Frequency Mode (80 Hz square wave)
+    A        DMR Duplex 1031 Hz Test Pattern (TS2 CC1 ID1 TG9)
+    M/m      DMR Simplex 1031 Hz Test Pattern (CC1 ID1 TG9)
+    a        P25 1011 Hz Test Pattern (NAC293 ID1 TG1)
+    N        NXDN 1031 Hz Test Pattern (RAN1 ID1 TG1)
+    K/k      BER Test Mode (FEC) for D-Star
+    b        BER Test Mode (FEC) for DMR Simplex (CC1)
+    B        BER Test Mode (1031 Hz Test Pattern) for DMR Simplex (CC1 ID1 TG9)
+    J        BER Test Mode (FEC) for YSF
+    j        BER Test Mode (FEC) for P25
+    n        BER Test Mode (FEC) for NXDN
+    S/s      RSSI Mode
+    V/v      Display version of MMDVMCal
+    <space>  Toggle transmit
+Levels: inverted: no, max: 436, min: -325, diff: 761, centre: 55		
+		]]>
+		</screen>
+		<para>设置好后按空格键 MMDVM 板开始发射，使用 SDR 软件观察，反复调试。</para>
 	</section>
-	
+
 	<section id="mmdvm.dashboard">
 		<title>Pi-Star Digital Voice Dashboard</title>
 		<para>Pi-Star_DV_Dash 是 pi-star 的 Dashboard，就是我们通过IP地址进入的界面。</para>
-		<para>项目地址是：<ulink url="https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash" /></para>
+		<para>
+			项目地址是：
+			<ulink url="https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash" />
+		</para>
 		<screen>
 		<![CDATA[
 git clone https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash.git		
@@ -790,8 +907,10 @@ git clone https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash.git
 		<title>FAQ</title>
 		<section>
 			<title>What is the difference between FCS and YSF? </title>
-			<para><ulink url="https://forum.sharkrf.com/viewtopic.php?t=1750" /></para>
-			
+			<para>
+				<ulink url="https://forum.sharkrf.com/viewtopic.php?t=1750" />
+			</para>
+
 		</section>
 		<section>
 			<title>Trying to find non existent YSF reflector with a name of CN China 1</title>
