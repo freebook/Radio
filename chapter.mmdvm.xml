@@ -903,6 +903,37 @@ git clone https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash.git
 		]]>
 		</screen>
 	</section>
+	<section id="">
+		<title>MMDVM firmware</title>
+		<para></para>
+		<!-- sudo apt install gcc-arm-linux-gnueabi g++-arm-linux-gnueabihf -->
+		<screen>
+		<![CDATA[	
+sudo apt install -y gcc-arm-none-eabi	
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+neo@netkiller /usr/local/src/MMDVM % arm-none-eabi-gcc -v                    
+Using built-in specs.
+COLLECT_GCC=arm-none-eabi-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper
+Target: arm-none-eabi
+Configured with: ../src/configure --build=x86_64-linux-gnu --prefix=/usr --includedir='/usr/lib/include' --mandir='/usr/lib/share/man' --infodir='/usr/lib/share/info' --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir='/usr/lib/lib/x86_64-linux-gnu' --libexecdir='/usr/lib/lib/x86_64-linux-gnu' --disable-maintainer-mode --disable-dependency-tracking --mandir=/usr/share/man --enable-languages=c,c++,lto --enable-multilib --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --build=x86_64-linux-gnu --target=arm-none-eabi --with-system-zlib --with-gnu-as --with-gnu-ld --with-pkgversion=15:6.3.1+svn253039-1build1 --without-included-gettext --prefix=/usr/lib --infodir=/usr/share/doc/gcc-arm-none-eabi/info --htmldir=/usr/share/doc/gcc-arm-none-eabi/html --pdfdir=/usr/share/doc/gcc-arm-none-eabi/pdf --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --disable-libstdc++-v3 --host=x86_64-linux-gnu --with-headers=no --without-newlib --with-multilib-list=rmprofile CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-arm-none-eabi-iopiMw/gcc-arm-none-eabi-6.3.1+svn253039=. -fstack-protector-strong' INHIBIT_LIBC_CFLAGS=-DUSE_TM_CLONE_REGISTRY=0 AR_FOR_TARGET=arm-none-eabi-ar AS_FOR_TARGET=arm-none-eabi-as LD_FOR_TARGET=arm-none-eabi-ld NM_FOR_TARGET=arm-none-eabi-nm OBJDUMP_FOR_TARGET=arm-none-eabi-objdump RANLIB_FOR_TARGET=arm-none-eabi-ranlib READELF_FOR_TARGET=arm-none-eabi-readelf STRIP_FOR_TARGET=arm-none-eabi-strip
+Thread model: single
+gcc version 6.3.1 20170620 (15:6.3.1+svn253039-1build1)		
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+cd /usr/local/src
+git clone https://github.com/g4klx/MMDVM.git
+cd MMDVM
+./mmdvmmenu.sh
+		
+		]]>
+		</screen>
+	</section>
 	<section id="mmdvm.faq">
 		<title>FAQ</title>
 		<section>

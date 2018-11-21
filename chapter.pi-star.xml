@@ -53,7 +53,7 @@ sudo pistar-update && pistar-upgrade -y
 		<title>修改权限从 ro 到 rw </title>
 		<screen>
 		<![CDATA[
-rpi-rw		
+rpi-rw
 		]]>
 		</screen>
 	</section>
