@@ -903,7 +903,7 @@ git clone https://github.com/AndyTaylorTweet/Pi-Star_DV_Dash.git
 		]]>
 		</screen>
 	</section>
-	<section id="">
+	<section id="mmdvm.firmware">
 		<title>MMDVM firmware</title>
 		<para></para>
 		<!-- sudo apt install gcc-arm-linux-gnueabi g++-arm-linux-gnueabihf -->
