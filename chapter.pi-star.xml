@@ -4,6 +4,11 @@
 	<para>Web UI 地址 http://pi-star/</para>
 	<para>用户：pi-star</para>
 	<para>密码：raspberry</para>
+	<section id="">
+		<title>对于初次接触 MMDVM 的人，怎么选择 MMDVM 板</title>
+		<para>以下是我总结出来的，希望对你有所帮助。</para>
+		<graphic format="png" fileref="images/mmdvm/MMDVM选择.png" />
+	</section>
 	<section>
 		<title>烧录img镜像文件</title>
 		<para>下载镜像文件 http://www.pistar.uk/downloads/</para>
