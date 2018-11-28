@@ -8,6 +8,8 @@
 		<title>对于初次接触 MMDVM 的人，怎么选择 MMDVM 板</title>
 		<para>以下是我总结出来的，希望对你有所帮助。</para>
 		<graphic format="png" fileref="images/mmdvm/MMDVM选择.png" />
+		<para>MMDVM 是爱好者们 DIY 出来的，并没有产品化。所以板子也参差不齐，这也很正常。购买的时候要问问买家是否使用进口的温补晶振，RX/TX Offset 和 误码率。</para>
+		<para>还有固件版本，板子出品时间，尽量购买最近推出的板子，或者询问一下群里Ham购买口碑比较好的。</para>
 	</section>
 	<section>
 		<title>烧录img镜像文件</title>
