@@ -165,7 +165,7 @@ rpi-rw
 			<para>剩余的工程菜单有调电压的，亚音频，数字亚音...等等，保持不变。这里我们只调试 REF 和 TUN 即可。</para>
 			<para>以上结果只是总结出来的，没有关于FT-7800工程模式的文档，不一定科学，大家一起讨论。顺便如果你有 FT-7800的工程模式的默认初始值，请给我一份。</para>
 			
-			<para>下面是 modom 配置，我是用的是 pi-star 默认配置。另外需要RXOffset，TXOffset的设置对于中继板是无效的。</para>
+			<para>下面是 modom 配置，我没有修改，保持 pi-star 默认配置即可。另外RXOffset，TXOffset的设置对于中继板是无效的。</para>
 			<graphic format="png" fileref="images/mmdvm/ repeater/modem.png" width="70%" />
 		</section>
 		<section>
