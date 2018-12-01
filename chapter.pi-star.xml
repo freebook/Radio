@@ -164,7 +164,7 @@ rpi-rw
 			<para>这里可调电台的发射无码率，但是我没有成功的调整到 0.0%。</para>
 			<para>剩余的工程菜单有调电压的，亚音频，数字亚音...等等，保持不变。这里我们只调试 REF 和 TUN 即可。</para>
 			<para>以上结果只是总结出来的，没有关于FT-7800工程模式的文档，不一定科学，大家一起讨论。顺便如果你有 FT-7800的工程模式的默认初始值，请给我一份。</para>
-			
+
 			<para>下面是 modom 配置，我没有修改，保持 pi-star 默认配置即可。另外RXOffset，TXOffset的设置对于中继板是无效的。</para>
 			<graphic format="png" fileref="images/mmdvm/ repeater/modem.png" width="70%" />
 		</section>
@@ -174,6 +174,16 @@ rpi-rw
 			<para>经过测试 FT-7800 不能在 VHF 上使用 9600 发射，但是可以接收。</para>
 			<para>有 FT-8800，FT-8900 的同学帮忙测试一下，在 VHF 上是否可以工作，如果可以请告诉我一声。</para>
 			<para>有 FT-991A 的同学也可以测试一下是否能在 50Mhz, 29Mhz 上玩 MMDVM。</para>
+		</section>
+		<section>
+			<title>给电台加锁</title>
+			<para>有一次我开了电台和MMDVM，就出去散步了，不一会就上不去了。回家一看频道变了，可能是小孩或家人不小心碰到。</para>
+			<para>进入 21 号菜单，LOCK</para>
+			<graphic format="jpeg" fileref="images/mmdvm/ repeater/LOCK.jpeg" width="60%" />
+			<para>选择 LK ALL</para>
+			<graphic format="jpeg" fileref="images/mmdvm/ repeater/LOCK.ALL.jpeg" width="60%" />
+			<para>按下 PPT 退出，然后把手麦从电台上拔下来。</para>
+			<para>设置完毕</para>
 		</section>
 	</section>
 
