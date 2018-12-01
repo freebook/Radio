@@ -132,8 +132,11 @@ rpi-rw
 		</section>
 		<section>
 			<title>DMR 不解码</title>
-			<para>从仪表盘可以看到自己可能发射，也能看到 MMDVM过来的信号，但是 DMR 只能看到信号📶，电台没有语音。</para>
+			<para>接收不解码的问题：</para>
+			<para>从仪表盘可以看到自己可能发射，也能看到 MMDVM过来的信号，但是 DMR 只能看到信号📶闪烁，电台没有语音。</para>
 			<para>解决方法，使用螺丝刀调节 TX 电位器，直到你的电台发出声音位置。每个中继板都不同，没有一个统一的值，我的中继版，顺时针拧到底 DMR 才解码。</para>
+			<para>发射不解码：</para>
+			<para>电台按下PPT发射，COS灯不亮，可以尝试调节 RX 电位器。</para>
 		</section>
 
 		<section>
@@ -146,7 +149,10 @@ rpi-rw
 
 		<section>
 			<title>进入 Yaesu FT-7800 的工程模式下微调</title>
-			<para>注意：进入工程模式一定要先记录下默认值，然后再调试。</para>
+			<tip>
+				<para>注意：进入工程模式一定要先记录下默认值，然后再调试。</para>
+				<para>注意：恢复出厂设置并不会恢复工程模式下的设置，所以慎重操作。</para>
+			</tip>
 			<para>准备好纸张，相机，进入 FT-7800 工程模式，每次操作建议写在纸上或者相机拍照。我第一次进入没有经验，胡乱调，现在已经不知道初始值了。</para>
 			<para>第一步：FT-7800 关机，同时按下 Mhz/PRI + BAND/SET + 5(超级频道) 在开机按钮。开机后看到 SETRST 字样。</para>
 			<para>第二步：按下互联网键（CCTV台标）不放手，依次按下电台下方的 MHz/PRI, TONE/HM/RV, LOW ACC, BAND SET, V/M MW, SCAN SEL, S.SCH ARTS 共7个按键，会发出“滴”的一声，这时便进入了工程模式。 </para>
@@ -157,6 +163,16 @@ rpi-rw
 			<graphic format="jpeg" fileref="images/mmdvm/ repeater/TUN.jpeg" width="60%" />
 			<para>这里可调电台的发射无码率，但是我没有成功的调整到 0.0%。</para>
 			<para>以上结果只是总结出来的，没有关于FT-7800工程模式的文档，不一定科学，大家一起讨论。顺便如果你有 FT-7800的工程模式的默认初始值，请给我一份。</para>
+			
+			<para>下面是 modom 配置，我是用的是 pi-star 默认配置。另外需要RXOffset，TXOffset的设置对于中继板是无效的。</para>
+			<graphic format="png" fileref="images/mmdvm/ repeater/modem.png" width="70%" />
+		</section>
+		<section>
+			<title>Yaesu FT-7800 在 VHF 模式下不支持 9600BPs 数据包通信。</title>
+			<para>我最初非常想使用VHF玩 MMDVM，拿到板子后，设置好 VHF 频率，就开始调试，折腾到凌晨2点没有成功，只能接受，无法发射。一度怀疑MMDVM板子有问题。最后偶然切换到 UHF 一切正常。</para>
+			<para>经过测试 FT-7800 不能在 VHF 上使用 9600 发射，但是可以接收。</para>
+			<para>有 FT-8800，FT-8900 的同学帮忙测试一下，在 VHF 上是否可以工作，如果可以请告诉我一声。</para>
+			<para>有 FT-991A 的同学也可以测试一下是否能在 50Mhz, 29Mhz 上玩 MMDVM。</para>
 		</section>
 	</section>
 
