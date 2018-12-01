@@ -169,7 +169,7 @@ rpi-rw
 		</section>
 		<section>
 			<title>Yaesu FT-7800 在 VHF 模式下不支持 9600BPs 数据包通信。</title>
-			<para>我最初非常想使用VHF玩 MMDVM，拿到板子后，设置好 VHF 频率，就开始调试，折腾到凌晨2点没有成功，只能接受，无法发射。一度怀疑MMDVM板子有问题。最后偶然切换到 UHF 一切正常。</para>
+			<para>我最初非常想使用VHF玩 MMDVM，拿到板子后，设置好 VHF 频率，就开始调试，折腾到凌晨2点没有成功，只能接收，无法发射（发射 COS灯不亮）。一度怀疑MMDVM板子有问题。最后偶然切换到 UHF 一切正常。</para>
 			<para>经过测试 FT-7800 不能在 VHF 上使用 9600 发射，但是可以接收。</para>
 			<para>有 FT-8800，FT-8900 的同学帮忙测试一下，在 VHF 上是否可以工作，如果可以请告诉我一声。</para>
 			<para>有 FT-991A 的同学也可以测试一下是否能在 50Mhz, 29Mhz 上玩 MMDVM。</para>
