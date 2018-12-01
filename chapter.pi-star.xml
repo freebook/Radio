@@ -180,8 +180,8 @@ rpi-rw
 			<para>有一次我开了电台和MMDVM，就出去散步了，不一会就上不去了。回家一看频道变了，可能是小孩或家人不小心碰到。</para>
 			<para>进入 21 号菜单，LOCK</para>
 			<graphic format="jpeg" fileref="images/mmdvm/repeater/LOCK.jpeg" width="60%" />
-			<para>选择 LK ALL</para>
-			<graphic format="jpeg" fileref="images/mmdvm/repeater/LOCK.ALL.jpeg" width="60%" />
+			<para>选择 LK K+D，表示锁住键盘和频道旋钮。</para>
+			<graphic format="jpeg" fileref="images/mmdvm/repeater/LOCK.K+D.jpeg" width="60%" />
 			<para>按下 PPT 退出，然后把手麦从电台上拔下来。</para>
 			<para>设置完毕</para>
 		</section>
