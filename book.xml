@@ -51,11 +51,11 @@
 
 	<!-- &book.dedication.xml; &book.preface.xml; -->
 
-	&chapter.mototrbo.xml;
-	&chapter.tunnel.xml;
 	&chapter.digital.xml;
+	&chapter.mototrbo.xml;
 	&chapter.pi-star.xml;
 	&chapter.mmdvm.xml;
 
+	&chapter.analog.xml;
 
 </book>

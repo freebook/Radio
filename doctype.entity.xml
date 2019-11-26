@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
+<!ENTITY section.digital.tunnel.xml			SYSTEM "section.digital.tunnel.xml">
+
+<!ENTITY chapter.analog.xml					SYSTEM "chapter.analog.xml">
+
 <!ENTITY chapter.mototrbo.xml				SYSTEM "chapter.mototrbo.xml">
-<!ENTITY chapter.tunnel.xml					SYSTEM "chapter.tunnel.xml">
 <!ENTITY chapter.pi-star.xml				SYSTEM "chapter.pi-star.xml">
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
-<!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">

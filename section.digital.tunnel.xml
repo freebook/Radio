@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="tunnel">
+<section id="tunnel">
 	<title>通过电台建立TCP/IP链路</title>
 	<para>数字中继联网方案</para>
 	<ulink url="images/tunnel/MototrboTunnel.png">
 		<graphic  format="png" fileref="images/tunnel/MototrboTunnel.png" srccredit="neo" />
 	</ulink>
-</chapter>
+</section>
