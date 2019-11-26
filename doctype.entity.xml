@@ -3,3 +3,4 @@
 <!ENTITY chapter.tunnel.xml					SYSTEM "chapter.tunnel.xml">
 <!ENTITY chapter.pi-star.xml				SYSTEM "chapter.pi-star.xml">
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
+<!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
