@@ -5,5 +5,7 @@
 <!ENTITY chapter.analog.xml					SYSTEM "chapter.analog.xml">
 
 <!ENTITY chapter.mototrbo.xml				SYSTEM "chapter.mototrbo.xml">
-<!ENTITY chapter.pi-star.xml				SYSTEM "chapter.pi-star.xml">
+
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
+<!ENTITY section.mmdvm.pi-star.xml			SYSTEM "section.mmdvm.pi-star.xml">
+<!ENTITY section.mmdvm.setup.xml			SYSTEM "section.mmdvm.setup.xml">
