@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section id="业余无线电应急通信是火腿臆想出来的">
+    <title>业余无线电应急通信是火腿臆想出来的</title>
+    <para>火腿们常常臆想，出现灾难和自然灾害的时候，应急通信会派上用场。业余无线电应急通信方面的做作用真的是微乎其微。</para>
+    <section>
+        <title>先说U/V段</title>
+        <para>目前打开电台，守听一下，你会发现各种频率上根本听不到声音，430～440Mhz 你呼叫一遍，能被人听到的机率几乎为零，能被人听到的前提是有人守听。</para>
+        <para>对于没有手制频的电台，你都不知道16个频道对应的频率是什么，只能一个一个呼叫。</para>
+        <para>海事电台和航空电台都有一个公共频道，用来广播本地的各种频率用途，例如船进港前先调到搜索模式，会搜到广播频道，然后去广播频道收听，会告诉你码头使用那个频率，再切到这个频率，联系调度人员，进港。航空电台也是如此，航空电台还会播报气压，风速，会告诉你与管制人员联系的频率。我们民用400兆可没有这个广播频率，虽然
+            438.500MHz 是大家公认的频率，并不是24小时都有人守在那里。</para>
+        <para>不过倒是可以做一个这样的电台，24小时每个一定时间播报一次本地所有中继的频率。</para>
+        <para>没有频谱扫描的电台，通到其他的电台的机率大大降低。</para>
+    </section>
+    <section>
+        <title>再说说短波</title>
+        <orderedlist>
+            <title>再说短波电台，短波电台通信三个致命缺点：</title>
+            <listitem>短波电台对天线要求太高</listitem>
+            <listitem>短波电台功率太大</listitem>
+            <listitem>短波靠天吃饭</listitem>
+        </orderedlist>
+        <para>首先，即使是多年的老火腿，第一次架短波的成功率都不高。普通人根本无法使用，短波天线架设环境有要求，高度有要求，体积大不便与携带，诸多缺点。</para>
+        <para>其次，发射功率通常都是 100W 左右，对供电有要求，应急通信多是发电机和电池，如果是电池 100瓦的功率，续航是大问题。</para>
+        <para>最后，短波传播不稳定，天气等诸多因素印象。</para>
+    </section>
+    <section>
+        <title>卫星通信才是应急通信首选</title>
+        <orderedlist>
+            <title>卫星通信优势：</title>
+            <listitem>体积小</listitem>
+            <listitem>耗电低</listitem>
+            <listitem>架设方便</listitem>
+            <listitem>宽带服务，热点服务</listitem>
+            <listitem>目前低轨道卫星，信号非常强，都不需要蝶形天线，平板天线即可。</listitem>
+            <listitem>卫星通信耗电量低，大功率充电宝都能供电。使用汽车蓄电池可以使用几周。</listitem>
+            <listitem>架设方便，漏天无遮挡即可，5分钟问完成架设。</listitem>
+        </orderedlist>
+        <para>卫星接收机积极小，Wi-Fi路由器大小，链接卫星后会共享Wi-Fi热点，也能使用USB连接电脑。能提供几十人上网，刷短视频，看剧，聊天都不影响。</para>
+        <para>马斯克的星链才是应急通信的未来</para>
+    </section>
+</section>
+<section>
+    <title>为什么对讲机可以实现十多公里的通讯距离，而手机必须依赖基站设备？</title>
+    <para>其实就是功率区别，手机是毫瓦发射，对讲机是0.5-5瓦发射，短波可以达到100瓦。</para>
+    <orderedlist>
+        <title>论调制模式，他们都有模拟跟数字两种方式，不同的是手机可以宽带通信，对讲机窄带：</title>
+        <listitem>手机是，模拟FM（第一代大哥大，已经淘汰），GSM，FDMA，CDMA，WCDMA（宽带），</listitem>
+        <listitem>对讲机是模拟制式（FM，AM，CW，SSB），数字制式 TDMA，FDMA</listitem>
+        <listitem>早期大哥大可以跟对讲机网络连接，实现对讲机打电话，使用 FM 模式。</listitem>
+    </orderedlist>
+    <para>目前 数字对讲机可以实现很多复杂通信，例如TDMA的DMR电台也能实现，对讲机打电话的功能。C4FM 电台有摄像头，可以传照片。</para>
+    <orderedlist>
+        <title>频率区别：</title>
+        <listitem>手机通畅是 KUHF 波段，例如 2GHz，5GHz，这样可以吧天线做的很小，海事卫星电话可能是 15G，20Ghz (记不清了)</listitem>
+        <listitem>手持对讲机主要是 30-800MHz较为常见，业余无线电使用：VHF 144MHz，UHF 430MHz 波段。</listitem>
+    </orderedlist>
+    <orderedlist>
+        <title>再说基站：</title>
+        <listitem>手机基站站一大优势，就是蜂窝结构，你站在任何一点，都能被网络覆盖。</listitem>
+        <listitem>对讲机中继台，数量有限，无法实现密集的蜂窝网络，但是可以架设在非常高的地方，例如山头上。通过大功率达到更远的距离覆盖。</listitem>
+    </orderedlist>
+    <para>目前对讲机中继台都可以联网，使用微波对射，双绞线，光线等等。将几个山头上的中继连接起来。可以覆盖城市 98% （有些死角）也能将全国的中继台连接起来。</para>
+    <para>最近大家都在玩 MMDVM 通过互联网，实现随身热点，接入到全国的中继网中。</para>
+    <para>对讲机玩法很多,最后建议你去考个执照，拿个呼号。</para>
+</section>

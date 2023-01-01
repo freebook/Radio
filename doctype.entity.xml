@@ -9,3 +9,9 @@
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
 <!ENTITY section.mmdvm.pi-star.xml			SYSTEM "section.mmdvm.pi-star.xml">
 <!ENTITY section.mmdvm.setup.xml			SYSTEM "section.mmdvm.setup.xml">
+
+<!ENTITY chapter.ham.xml        			SYSTEM "chapter.ham.xml">
+<!ENTITY section.ham.0.xml        			SYSTEM "section.ham.0.xml">
+<!ENTITY section.ham.1.xml        			SYSTEM "section.ham.1.xml">
+<!ENTITY section.ham.2.xml        			SYSTEM "section.ham.2.xml">
+<!ENTITY section.ham.3.xml        			SYSTEM "section.ham.3.xml">
