@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="repeater">
-	<title>数字中继</title>
+<chapter id="motorola">
+	<title>Motorola 摩托罗拉</title>
 	<section id="digital">
 		<title>数字中继VPN联网方案</title>
 		<ulink url="images/repeater/digital.png">
@@ -403,7 +403,7 @@ os.system("ping %s" % protocol.id2ip(int(self.options.cai), int(self.options.onl
 		</section>
 		<section>
 			<title>TMS 短信协议分析</title>
-			<graphic format="png" fileref="images/mototrbo/MototrboTMS.png" srccredit="neo" width=""/>
+			<graphic format="png" fileref="images/mototrbo/MototrboTMS.png" srccredit="neo" width="" />
 			<para>头部：0x00开始，然后是短信内容的长度，0x0e 0x00 分割，然后是序号,最后是 0x04 结尾 内容：\r回车符,0x00,换行符\n,信息内容，0x00结束,短信的字符集是 utf-16</para>
 			<para>一条完整短信最终协议包如下：</para>
 			<screen>
@@ -507,5 +507,12 @@ class TMS(Protocol):
 			<para>相关软件：https://github.com/netkiller/Mototrbo</para>
 		</section>
 	</section>
+	<section id="tunnel">
+		<title>通过电台建立TCP/IP链路</title>
+		<para>数字中继联网方案</para>
+		<ulink url="images/tunnel/MototrboTunnel.png">
+			<graphic format="png" fileref="images/tunnel/MototrboTunnel.png" srccredit="neo" />
+		</ulink>
+	</section>
 </chapter>
-<!-- <chapter id="analog"> <title>模拟中继</title> <ulink url="images/repeater/analog.png">  </ulink> </chapter> -->
+<!-- <chapter id="analog"> <title>模拟中继</title> <ulink url="images/repeater/analog.png"> </ulink> </chapter> -->

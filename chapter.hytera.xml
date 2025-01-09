@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="hytera">
+	<title>Hytera 海能达</title>
+	<section>
+		<title>HM780 开启 GPS 定位</title>
+		<para>开启该功能之后，两个人可以看到对方的距离跟方位</para>
+
+		<procedure>
+			<title>海能达 HM780 GPS 定位设置</title>
+			<step>
+				<para>第一步，检查附件设置</para>
+				<graphic format="png" fileref="images/Hytera/HM780/gps/1.jpg" srccredit="neo" />
+			</step>
+
+			<step>
+				<para>第二步，勾选“语音接收过程中定位信息回复”</para>
+				<graphic format="png" fileref="images/Hytera/HM780/gps/2.jpg" srccredit="neo" />
+			</step>
+
+			<step>
+				<para>第三步、语音携带定位信息</para>
+				<graphic format="png" fileref="images/Hytera/HM780/gps/3.jpg" srccredit="neo" />
+			</step>
+			<step>
+				<para>第四步、查看定位信息</para>
+				<graphic format="png" fileref="images/Hytera/HM780/gps/4.jpg" srccredit="neo" />
+				<graphic format="png" fileref="images/Hytera/HM780/gps/5.jpg" srccredit="neo" />
+			</step>
+		</procedure>
+		<para>现在呼叫对方，就能显示距离了。忘记拍图片了，下次补上。</para>
+	</section>
+	<section>
+		<title>Hytera 海能达 HM7780 IP中转</title>
+		<para>想加入 IP 中转的小伙伴，请私信我，这里是 BG7NYT，MMDVM：46073，深圳 DMR 439.790</para>
+		<procedure>
+			<title>海能达 HM780 IP中转 功能设置</title>
+			<step>
+				<para>第一步，设置电台的IP地址</para>
+				<graphic format="png" fileref="images/Hytera/HM780/ip/1.jpg" srccredit="neo" />
+				<para>设置电台的IP地址，建议使用DHCP，比较省事</para>
+			</step>
+
+			<step>
+				<para>第二步，从站链接主站</para>
+				<graphic format="png" fileref="images/Hytera/HM780/ip/2.jpg" srccredit="neo" />
+			</step>
+
+			<step>
+				<para>第三步，写频</para>
+				<graphic format="png" fileref="images/Hytera/HM780/ip/3.jpg" srccredit="neo" />
+				<para>IP转中必须使用直频，即发射和接收同一个频率，色吗/时隙，你可以随意，不能有扫描/漫游列表。</para>
+				<para>接收组：无，联系人：目前大家用的是46001，你用全乎大家也能听到。</para>
+			</step>
+		</procedure>
+		<para>主机只有有一个，从机可以有多个。</para>
+
+	</section>
+</chapter>

@@ -1,0 +1,6 @@
+[submodule "common"]
+	path = common
+	url = git@github.com:freebook/common.git
+[submodule "docbook-xsl"]
+	path = docbook-xsl
+	url = git@github.com:freebook/docbook-xsl.git
