@@ -56,7 +56,7 @@
 
 	</section>
 	<section id="HM780-IP-MMDVM">
-		<title>HM780 IP中转 接入 MMDVM</title>
+		<title>HM780 IP中转 接入 MMDVM（实验）</title>
 		<para>HM780 IP中转，可以实现多地，跨地域互联，IP中转是一个私有网络，我们希望把它接入到 MMDVM，于是想到使用 MMDVM 热点，完成我们想法。</para>
 		<graphic format="png" fileref="images/Hytera/HM780/mmdvm/mmdvm.jpg" srccredit="neo" />
 		<para>实验把本地从机与远程主机互联，本地电台与 MMDVM 设置相同频率，色码，时隙，通话组，你可以理解为，HM780 就是用个用户手持电台的场景。</para>
@@ -66,6 +66,12 @@
 		<para>----- 分割线 -----</para>
 		<para>本地手台发射，HM780和MMDVM同时接收，HM780 通过IP中转把语音传给远程主机，MMDVM把语音送到 BM通话组。远程主机发射，远程手台接收。</para>
 		<para>远程手台发射，远程HM780 接收，再通过IP中转送到，本地 HM780 发射，此时 MMDVM和手台同时接收。手台听到对面手台的语音，同时 MMDVM 把远程语音送到 BM 通话组。</para>
-		<para>至此，两端移动终端手台，实现了互通，并且接入到了 MMDVM。</para>		
+		<para>至此，两端移动终端手台，实现了互通，并且接入到了 MMDVM。</para>
 	</section>
+	<section id="hytera.hm780.timeslot">
+		<title>Hytera HM780 DMR 双时隙 IP中转（实验）</title>
+		<graphic format="png" fileref="images/Hytera/HM780/slot/timeslot.jpg" srccredit="neo" />
+		<graphic format="webp" fileref="images/Hytera/HM780/slot/TDMA.webp" srccredit="neo" />
+	</section>
+
 </chapter>
