@@ -56,4 +56,5 @@
 	&chapter.mototrbo.xml;
 	&chapter.hytera.xml;
 	&chapter.mmdvm.xml;
+	&section.faq.xml;
 </book>

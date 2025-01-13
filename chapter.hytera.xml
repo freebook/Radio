@@ -73,5 +73,9 @@
 		<graphic format="png" fileref="images/Hytera/HM780/slot/timeslot.jpg" srccredit="neo" />
 		<graphic format="webp" fileref="images/Hytera/HM780/slot/TDMA.webp" srccredit="neo" />
 	</section>
-
+	<section>
+		<title>Hytera HM780 实现 云 PTT（Push To Talk）</title>
+		<graphic format="webp" fileref="images/Hytera/HM780/ptt/cloud-ptt.webp" srccredit="neo" />
+	</section>
+	
 </chapter>

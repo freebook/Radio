@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="faq">
+	<title>常用问答集</title>
+
+	<qandaset>
+		<qandaentry>
+			<question>
+				<para>为什么脱网后发射不了，显示信道忙？</para>
+			</question>
+			<answer>
+				<para>DMR 数字模式，脱网之后，如果中继其他时隙仍然在发射，就会出现信道忙，无法发射，必须等到中继完全终止发射。</para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para>手麦挂钩的秘密?</para>
+			</question>
+			<answer>
+				<para>手麦挂钩有金属的，有塑料的，金属挂钩并不是为了耐用，而是挂钩上有两个金属触点，通过写频软件可以设置该挂钩的功能，例如摘机停止扫描。</para>
+			</answer>
+		</qandaentry>
+	</qandaset>
+</chapter>
