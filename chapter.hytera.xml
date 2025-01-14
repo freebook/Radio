@@ -77,5 +77,8 @@
 		<title>Hytera HM780 实现 云 PTT（Push To Talk）</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/ptt/cloud-ptt.webp" srccredit="neo" />
 	</section>
-	
+	<section>
+		<title>Hytera HM780 脚踏 PTT + 电容麦克风</title>
+		<graphic format="webp" fileref="images/Hytera/HM780/ptt/mix.webp" srccredit="neo" />
+	</section>	
 </chapter>
