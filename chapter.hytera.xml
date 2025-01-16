@@ -92,4 +92,8 @@
 		<title>Hytera HM780 脚踏 PTT + 电容麦克风</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/ptt/mix.webp" srccredit="neo" />
 	</section>
+	<section>
+		<title>Hytera HM780 IP中转·逆向工程·协议分析</title>
+		<graphic format="webp" fileref="images/Hytera/HM780/network.webp" srccredit="neo" />
+	</section>
 </chapter>
