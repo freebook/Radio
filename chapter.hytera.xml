@@ -96,4 +96,12 @@
 		<title>Hytera HM780 IP中转·逆向工程·协议分析</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/network.webp" srccredit="neo" />
 	</section>
+		<section>
+		<title>Hytera RD980 模拟-模拟 模拟-数字 数字-数字 背靠背连接方案</title>
+		<graphic format="webp" fileref="images/Hytera/RD980/link.webp" srccredit="neo" />
+	</section>
+		<section>
+		<title>Hytera RD980 与 HM780 IP中转 互联方案</title>
+		<graphic format="webp" fileref="images/Hytera/HM780/repeater/rd980-hm780.webp" srccredit="neo" />
+	</section>
 </chapter>
