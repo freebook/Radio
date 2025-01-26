@@ -125,4 +125,13 @@
 		</section>
 	</section>
 	&section.mmdvm.setup.xml;
+	<section>
+		<title>呼号列表</title>
+		<ulink url="https://www.radioid.net/static/users.json" />
+		<ulink url="https://database.radioid.net/api/dmr/user/?country=China">中国呼号</ulink>
+	</section>
+	<section>
+		<title>DMR Network</title>
+		<ulink url="https://www.radioid.net/static/rptrs.json"></ulink>
+	</section>
 </chapter>
