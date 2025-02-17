@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section id="wpsd">
+	<title>WPSD</title>
+	<section>
+		<title>Raspberry 树莓派安装 WPSD</title>
+		<para>下载 WPSD</para>
+		<screen>
+		<![CDATA[
+neo@Neo-Mac-mini-M4 Downloads % wget https://w0chp.radio/WPSD_RPi-Bookworm.img.xz
+		]]>
+		</screen>
+		<para></para>
+		<screen>
+		<![CDATA[
+neo@Neo-Mac-mini-M4 Downloads % xz -d WPSD_RPi-Bookworm.img.xz		
+		]]>
+		</screen>
+		<para>烧录 TF 卡</para>
+		<screen>
+		<![CDATA[
+neo@Neo-Mac-mini-M4 Downloads % sudo dd bs=100m if=WPSD_RPi-Bookworm.img of=/dev/rdisk7
+		]]>
+		</screen>
+		<para>烧录过程演示</para>
+		<screen>
+		<![CDATA[
+neo@Neo-Mac-mini-M4 Downloads % ls WPSD_RPi-Bookworm.img.xz 
+WPSD_RPi-Bookworm.img.xz
+
+neo@Neo-Mac-mini-M4 Downloads % xz -d WPSD_RPi-Bookworm.img.xz
+
+neo@Neo-Mac-mini-M4 Downloads % diskutil list
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *251.0 GB   disk0
+   1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk3         245.1 GB   disk0s2
+   3:        Apple_APFS_Recovery Container disk2         5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +245.1 GB   disk3
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh HD            11.2 GB    disk3s1
+   2:              APFS Snapshot com.apple.os.update-... 11.2 GB    disk3s1s1
+   3:                APFS Volume Preboot                 6.9 GB     disk3s2
+   4:                APFS Volume Recovery                1.0 GB     disk3s3
+   5:                APFS Volume Data                    149.0 GB   disk3s5
+   6:                APFS Volume VM                      1.1 GB     disk3s6
+
+/dev/disk6 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:        CD_partition_scheme                        *116.8 MB   disk6
+   1:     Apple_partition_scheme                         101.7 MB   disk6s0
+   2:        Apple_partition_map                         1.0 KB     disk6s0s1
+   3:                  Apple_HFS Mobile Card             54.8 MB    disk6s0s2
+
+/dev/disk7 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *16.1 GB    disk7
+   1:               Windows_NTFS Music                   16.1 GB    disk7s1
+
+neo@Neo-Mac-mini-M4 Downloads % diskutil unmountDisk /dev/disk7 
+Unmount of all volumes on disk7 was successful
+
+neo@Neo-Mac-mini-M4 Downloads % sudo dd if=WPSD_RPi-Bookworm.img of=/dev/rdisk7 bs=100m
+34+1 records in
+34+1 records out
+3593024000 bytes transferred in 513.517482 secs (6996887 bytes/sec)		
+
+neo@Neo-Mac-mini-M4 Downloads % diskutil eject /dev/disk7s1
+Disk /dev/disk7s1 ejected
+		]]>
+		</screen>
+	</section>
+	<section>
+		<title>进入 pi-star 终端</title>
+		<para>主机地址：wpsd.local</para>
+		<para>用户名：pa-star</para>
+		<para>密码：raspberry</para>
+		<screen>
+		<![CDATA[
+PS C:\Users\neo> SSH pi-star@wpsd.local
+pi-star@wpsd.local's password:
+
+This is...
+ _      _____  _______
+| | /| / / _ \/ __/ _ \
+| |/ |/ / ___/\ \/ // /
+|__/|__/_/  /___/____/
+
+Version Status
+---------------
+  • WPSD Dashboard Web Software:
+      Ver. # 643396cb66
+  • WPSD Support Utilites and Programs:
+      Ver. # bbc9b71e73
+  • WPSD Digital Voice and Related Binaries:
+      Ver. # 41b5a9e593
+
+[?] Your WPSD dashboard can be accesed from:
+    • http://wpsd.local/
+    • http://wpsd/
+    • http://172.16.0.14/
+
+[i] WPSD command-line tools are all prefixed with "wpsd-".
+    Simply type wpsd- and then the TAB key twice to see a list.
+
+[!] WPSD is Free Software, and comes with ABSOLUTELY NO WARRANTY.
+
+Last login: Mon Feb 17 22:18:41 2025 from 172.16.0.11
+pi-star@wpsd:~ $		
+		]]>
+		</screen>
+	</section>
+	
+	<section>
+		<title>GPS</title>
+		<para>在树莓派上插一张 USB GPS 天线，然后找到该天线的设备文件，一般是 /dev/ttyACM0，然后使用下面命令测试，可以看到如下数据。</para>
+		<screen>
+		<![CDATA[
+pi-star@wpsd:~ $ cat /dev/ttyACM0 | more
+$GPTXT,01,01,02,u-blox ag - www.u-blox.com*50
+
+$GPTXT,01,01,02,HW  UBX-G70xx   00070000 *77
+
+$GPTXT,01,01,02,ROM CORE 1.00 (59842) Jun 27 2012 17:43:52*59
+
+$GPTXT,01,01,02,PROTVER 14.00*1E
+
+$GPTXT,01,01,02,ANTSUPERV=AC SD PDoS SR*20
+
+$GPTXT,01,01,02,ANTSTATUS=OK*3B
+
+$GPTXT,01,01,02,LLC FFFFFFFF-FFFFFFFD-FFFFFFFF-FFFFFFFF-FFFFFFF9*53
+
+$GPRMC,142021.00,A,2253.63099,N,11430.51642,E,0.027,,170225,,,D*77
+
+$GPVTG,,T,,M,0.027,N,0.051,K,D*27
+
+$GPGGA,142021.00,2253.63099,N,11430.51642,E,2,08,1.08,68.4,M,-1.2,M,,0000*7E
+
+$GPGSA,A,3,30,06,11,25,13,29,05,20,,,,,1.75,1.08,1.38*0E
+
+$GPGSV,4,1,14,05,51,338,28,06,22,105,32,07,00,050,,11,48,079,31*7B
+
+$GPGSV,4,2,14,12,11,219,08,13,71,151,42,15,44,219,16,19,01,152,*7A
+
+$GPGSV,4,3,14,20,41,031,38,24,00,193,,25,07,253,09,29,34,312,28*73
+
+$GPGSV,4,4,14,30,15,080,27,50,60,150,35*77
+--More--		
+		]]>
+		</screen>
+		<para>进入 WPSD 常规配置，指定GPS设备为 Modem Port: /dev/ttyACM0，码率是 Modem Baud Rate: 115200</para>
+	</section>
+	
+</section>
