@@ -134,4 +134,9 @@
 		<title>DMR Network</title>
 		<ulink url="https://www.radioid.net/static/rptrs.json"></ulink>
 	</section>
+	<section>
+		<title>YSF Network</title>
+		<ulink url="https://www.pistar.uk/downloads/YSF_Hosts.txt"></ulink>
+	</section>
+	
 </chapter>
