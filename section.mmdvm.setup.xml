@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section>
+<section id="mmdvmhost">
 	<title>手工编译安装 MMDVM</title>
 	<para>MMDVM != Pi-Star</para>
 	<para>说起MMDVM大家就会想到Pi-Star，但是 MMDVM 不等于 Pi-Star。MMDVM是一套独立系统，Pi-Star 是一套封装好的MMDVM套件(包含了 MMDVMHost , Dashboard 等软件)。</para>

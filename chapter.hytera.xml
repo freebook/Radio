@@ -29,8 +29,8 @@
 		</procedure>
 		<para>现在呼叫对方，就能显示距离了。忘记拍图片了，下次补上。</para>
 	</section>
-	<section>
-		<title>Hytera 海能达 HM7780 IP中转</title>
+	<section id="hytera.ip">
+		<title>Hytera 海能达 HM780 IP中转</title>
 		<para>想加入 IP 中转的小伙伴，请私信我，这里是 BG7NYT，MMDVM：46073，深圳 DMR 439.790</para>
 		<procedure>
 			<title>海能达 HM780 IP中转 功能设置</title>
@@ -65,6 +65,16 @@
 			<listitem>扫描：不能开启扫描/漫游，IP中转与扫描功能互斥，只能二选一</listitem>
 			<listitem>兼容：摩托罗拉 P8668, P8668I 出现发射没问题，接收没声音。</listitem>
 		</itemizedlist>
+		<section>
+			<title>通话组相关</title>
+			<para>HM780 发射联系人 和 接收组列表 并影响移动终端。</para>
+			<para>也就是无论手台设置什么发射联系人 和 接收组列表 HM780 都会转发</para>
+		</section>
+		<section>
+			<title>声码器相关</title>
+			<para>HM780 声码器设置不影响移动终端</para>
+			<para>移动终端使用什么声码器都可以，HM780都会转发语音。</para>
+		</section>
 	</section>
 	<section id="HM780-IP-MMDVM">
 		<title>HM780 IP中转 接入 MMDVM（实验）</title>
@@ -84,23 +94,23 @@
 		<graphic format="png" fileref="images/Hytera/HM780/slot/timeslot.jpg" srccredit="neo" />
 		<graphic format="webp" fileref="images/Hytera/HM780/slot/TDMA.webp" srccredit="neo" />
 	</section>
-	<section>
+	<section id="hytera.cloud.ptt">
 		<title>Hytera HM780 实现 云 PTT（Push To Talk）</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/ptt/cloud-ptt.webp" srccredit="neo" />
 	</section>
-	<section>
+	<section id="hytera.table.ptt">
 		<title>Hytera HM780 脚踏 PTT + 电容麦克风</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/ptt/mix.webp" srccredit="neo" />
 	</section>
-	<section>
+	<section id="hytera.hm780.server">
 		<title>Hytera HM780 IP中转·逆向工程·协议分析</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/network.webp" srccredit="neo" />
 	</section>
-		<section>
+	<section id="hytera.rd980">
 		<title>Hytera RD980 模拟-模拟 模拟-数字 数字-数字 背靠背连接方案</title>
 		<graphic format="webp" fileref="images/Hytera/RD980/link.webp" srccredit="neo" />
 	</section>
-		<section>
+	<section id="hytera.rd980.hm780">
 		<title>Hytera RD980 与 HM780 IP中转 互联方案</title>
 		<graphic format="webp" fileref="images/Hytera/HM780/repeater/rd980-hm780.webp" srccredit="neo" />
 	</section>

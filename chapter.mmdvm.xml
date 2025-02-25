@@ -2,7 +2,7 @@
 <chapter id="mmdvm">
 	<title>MMDVM (Multi-Mode Digital Voice Modem) </title>
 	&section.mmdvm.pi-star.xml;
-	<section>
+	<section id="mmdvm.hotspot.7800">
 		<title>Yaesu FT-7800 + 中继版解决方案</title>
 		<section>
 			<title>准备工作</title>
@@ -125,12 +125,12 @@
 		</section>
 	</section>
 	&section.mmdvm.setup.xml;
-	<section>
+	<section id="mmdvm.users">
 		<title>呼号列表</title>
 		<ulink url="https://www.radioid.net/static/users.json" />
 		<ulink url="https://database.radioid.net/api/dmr/user/?country=China">中国呼号</ulink>
 	</section>
-	<section>
+	<section id="mmdvm.dmr.network">
 		<title>DMR Network</title>
 		<ulink url="https://www.radioid.net/static/rptrs.json"></ulink>
 	</section>
@@ -138,5 +138,5 @@
 		<title>YSF Network</title>
 		<ulink url="https://www.pistar.uk/downloads/YSF_Hosts.txt"></ulink>
 	</section>
-	
+	&section.mmdvm.wpsd.xml;
 </chapter>
