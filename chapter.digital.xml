@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section>
-	<title>DroidStar</title>
-</section>
+<chatper id="digital">
+	<title>数字业余无线电</title>
+
+	<section>
+		<title>声码器</title>
+		<para>声码器（vocoder）语音信号某种模型的语音分析合成系统。在传输中只利用模型参数，在编译码时利用模型参数估计和语音合成技术的语音信号编译码器，一种对话音进行分析和合成的编、译码器，也称话音分析合成系统或话音频带压缩系统。它是压缩通信频带和进行保密通信的有力工具。</para>
+		<section>
+			<title>Codec2 声码器</title>
+			<para>Codec2 是一种开源的低比特率语音编码器，设计用于在 700 到 3200 bit/s 的范围内提供通信质量的语音。其主要应用是低带宽的 HF/VHF 数字无线电。</para>
+		</section>
+		<section>
+			<title>Ambe 声码器</title>
+			<para>官网：https://www.dvsinc.com/</para>
+			<para>C4FM Fusion 使用AMBE+2， DMR使用AMBE+2 而D-Star 使用AMBE+</para>
+			<para>Fusion的传输速率为9.6Kbps，DMR的传输速率为4.8Kbps x2, D-Star的传输速率为4.8Kbps。</para>
+			<para>其中D-STAR使用的AMBE+声码器的专利已过期，C4FM/DMR 其他几种使用的AMBE+2声码器还没过期，直到2028年才过期。</para>
+		</section>
+		<section>
+			<title>ACELP 声码器</title>
+			<para>TETRA（Terrestrial Trunked Radio）系统使用的是 ACELP（Algebraic Code Excited Linear Prediction） 声码器，具体来说是 TETRA ACELP 声码器。这种声码器专为TETRA系统设计，能够在低比特率（通常为4.567 kbps）下提供高质量的语音编码，同时保持较强的抗噪能力和高效的频谱利用率。</para>
+		</section>
+	</section>
+	
+	<section>
+		<title>调制模式</title>
+		<para>Fusion 使用C4FM(连续4级频率调制），DRM使用4FSK（4级频移键控），而D-Star使用GMSK（高斯最小频移键控）。Tetra 使用π/4-差分正交相移键控调制(π/4-DQPSK)</para>
+		<para>DMR 使用TDMA（时分多址），C4FM和D-Star使用FDMA（频分多址）</para>
+		
+	</section>
+	<section>
+		<title>带宽</title>
+		<para>Fusion 和 DMR 的带宽利用率为12.5Khz, 而D-Star的带宽利用率为6.25Khz。</para>
+	</section>
+	<section>
+		<title>用户身份验证</title>
+		<para>E-Star和Fusion 通过呼号识别用户，DMR通过用户ID来识别用户。</para>
+	</section>
+	<section>
+		<title>中继器</title>
+		<para>DMR 支持通话组：全乎，组呼，单呼</para>
+		<para>D-Star 支持反射器多中继器连接，多种及创建虚拟组</para>
+		<para>C4FM Fusion 支持 Wires-X Room</para>
+	</section>
+	<section>
+		<title>DroidStar</title>
+	</section>
+</chatper>
