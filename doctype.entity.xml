@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
-
 <!ENTITY chapter.analog.xml					SYSTEM "chapter.analog.xml">
+<!ENTITY part.digital.xml					SYSTEM "part.digital.xml">
+<!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
+<!ENTITY section.digital.freedmr.xml		SYSTEM "section.digital.freedmr.xml">
 
 <!ENTITY chapter.mototrbo.xml				SYSTEM "chapter.mototrbo.xml">
 
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
 <!ENTITY section.mmdvm.pi-star.xml			SYSTEM "section.mmdvm.pi-star.xml">
 <!ENTITY section.mmdvm.setup.xml			SYSTEM "section.mmdvm.setup.xml">
-<!ENTITY section.mmdvm.wpsd.xml			SYSTEM "section.mmdvm.wpsd.xml">
+<!ENTITY section.mmdvm.wpsd.xml				SYSTEM "section.mmdvm.wpsd.xml">
+<!ENTITY section.mmdvm.repeater.xml			SYSTEM "section.mmdvm.repeater.xml">
 
 <!ENTITY chapter.ham.xml        			SYSTEM "chapter.ham.xml">
 <!ENTITY section.ham.0.xml        			SYSTEM "section.ham.0.xml">

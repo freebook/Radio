@@ -52,9 +52,6 @@
 	<!-- &book.dedication.xml; &book.preface.xml; -->
 	&chapter.ham.xml;
 	&chapter.analog.xml;
-	&chapter.digital.xml;
-	&chapter.mototrbo.xml;
-	&chapter.hytera.xml;
-	&chapter.mmdvm.xml;
+	&part.digital.xml;
 	&section.faq.xml;
 </book>

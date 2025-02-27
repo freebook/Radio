@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chatper id="digital">
-	<title>数字业余无线电</title>
-
+<chapter id="为什么国家会大力推广数字电台">
+	<title>数字电台</title>
+	<section>
+		<title>为什么国家会大力推广数字电台</title>
+		<para>以目前 UHF 段为例，给国家和用户都带来很多痛点。</para>
+		<orderedlist>
+			<title>无线电管理部门的痛点</title>
+			<listitem>首先是频率使用混乱难管理，很多单位无证发射。</listitem>
+			<listitem>然后是收费难，不主动办理执照的用户很难收到频谱使用费。</listitem>
+			<listitem>最后是容量饱和，UHF已经十分拥挤。</listitem>
+		</orderedlist>
+		<orderedlist>
+			<title>用户痛点</title>
+			<listitem>首先面临是饱和的HUF段，干扰严重，尤其对付费用户来讲，花了钱，并没用得到想要的用户体验。</listitem>
+			<listitem>然后管理部门懒政，中继台架设一律不批准，用户架设睁一只眼闭一只眼，出了问题将责任推给用户。</listitem>
+			<listitem>最后由于得不到服务，用户不想付费使用频率。</listitem>
+		</orderedlist>
+		<para>数字电台解决了什么问题？</para>
+		<para>传统模拟电台，窄带通信最低使用 25K 带宽，例如 (440-430)/0.25 = 40.0，也就是 UHF 业余段落，能提供40个频道，也就是说同时能容纳 40 路语音同时通话。</para>
+		<para>注意这是在理论情况下，电台质量都很好，没有频偏，不会产生镜像频率，没有杂波散射等等。但凡有个老一点的电台（古董级）就可能干扰到其他用户。</para>
+		<para>可以想象一下，400～420，450～470 情况，这里以 UHF 高举例 (470-450)/0.25 = 80 频道，对于一线城市，酒店、餐饮、物业、工地、铁路、电力、政府二线岗位…… 这 80 个信道，怎么分配都不够用。</para>
+		<para>这时数字电台来了，数字电台使用 4FSK 调制，只需要 12.5K 带宽，以 DMR/PDT 为例 (470-450)/0.125 = 160 信道，一下容量翻倍了。并且 DMR 是双时隙 (470-450)/0.125 * 2 = 320 同时能容纳 320 路通信（包括语音+数据） </para>
+		<para>数字电台还同时解决了，鉴权，加密，监听，遥闭，定位…… 等等问题，一定程度上解决了，管理难的问题。</para>
+		
+	</section>
 	<section>
 		<title>声码器</title>
 		<para>声码器（vocoder）语音信号某种模型的语音分析合成系统。在传输中只利用模型参数，在编译码时利用模型参数估计和语音合成技术的语音信号编译码器，一种对话音进行分析和合成的编、译码器，也称话音分析合成系统或话音频带压缩系统。它是压缩通信频带和进行保密通信的有力工具。</para>
@@ -21,12 +43,12 @@
 			<para>TETRA（Terrestrial Trunked Radio）系统使用的是 ACELP（Algebraic Code Excited Linear Prediction） 声码器，具体来说是 TETRA ACELP 声码器。这种声码器专为TETRA系统设计，能够在低比特率（通常为4.567 kbps）下提供高质量的语音编码，同时保持较强的抗噪能力和高效的频谱利用率。</para>
 		</section>
 	</section>
-	
+
 	<section>
 		<title>调制模式</title>
 		<para>Fusion 使用C4FM(连续4级频率调制），DRM使用4FSK（4级频移键控），而D-Star使用GMSK（高斯最小频移键控）。Tetra 使用π/4-差分正交相移键控调制(π/4-DQPSK)</para>
 		<para>DMR 使用TDMA（时分多址），C4FM和D-Star使用FDMA（频分多址）</para>
-		
+
 	</section>
 	<section>
 		<title>带宽</title>
@@ -42,7 +64,6 @@
 		<para>D-Star 支持反射器多中继器连接，多种及创建虚拟组</para>
 		<para>C4FM Fusion 支持 Wires-X Room</para>
 	</section>
-	<section>
-		<title>DroidStar</title>
-	</section>
-</chatper>
+
+
+</chapter>

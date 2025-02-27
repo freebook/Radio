@@ -64,5 +64,24 @@ rpi-rw
 		]]>
 		</screen>
 	</section>
+	<section id="mmdvm.users">
+		<title>呼号列表</title>
+		<ulink url="https://www.radioid.net/static/users.json" />
+		<ulink url="https://database.radioid.net/api/dmr/user/?country=China">中国呼号</ulink>
+	</section>
+	<section id="mmdvm.dmr.network">
+		<title>DMR Network</title>
+		<ulink url="https://www.radioid.net/static/rptrs.json"></ulink>
+	</section>
+	<section>
+		<title>YSF Reflector List</title>
+		<para>Yaesu 设备按下 X 键 然后点击 Search 按钮，再点击 ID 按钮，输入下面列表 YSF DTMF，最后点击 EN 按钮，完成切换 </para>
+		<ulink url="https://www.pistar.uk/ysf_reflectors.php"></ulink>
+	</section>
+	<section>
+		<title>YSF Network</title>
+		<ulink url="https://www.pistar.uk/downloads/YSF_Hosts.txt"></ulink>
+	</section>
 	
+		&section.mmdvm.setup.xml;
 </section>
