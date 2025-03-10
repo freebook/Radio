@@ -129,7 +129,8 @@
 		<para>新建一个模拟信道，例如 438.800，信令类型选择“无”，勾选“平坦音频”，接收/发射不要设置哑音。超时禁发时间[秒]设置为“无限制”。</para>
 		<graphic format="png" fileref="images/Hytera/HM780/mmdvm/hotspot2.png" srccredit="neo" />
 		<para>新建一个“情景模式”，去掉“AI 降噪”和“模拟接收消噪”， 这两项配置会影响 RX 音频数据。</para>
-		<graphic format="png" fileref="images/Hytera/HM780/mmdvm/hotspot3.png" srccredit="neo" />		
+		<graphic format="png" fileref="images/Hytera/HM780/mmdvm/hotspot3.png" srccredit="neo" />	
+		<para>CPS 写入之后，进入电台“情景模式”，切换到“MMDVM”</para>	
 		<para>致辞，电台部分完成设置了。剩下的工作就是 MMDVM 配置，你可以选择 Pi-Star 活着 WPSD 都可以了。</para>
 		<para>设置完成之后，就能使用手台发射 与 HM780 大热点进行通信了。</para>
 		<tip>
