@@ -44,9 +44,15 @@
 				<para>第二步，从站链接主站</para>
 				<graphic format="png" fileref="images/Hytera/HM780/ip/2.jpg" srccredit="neo" />
 			</step>
-
+			
 			<step>
-				<para>第三步，写频</para>
+				<para>第三步，IP 互联接入管理</para>
+				<graphic format="png" fileref="images/Hytera/HM780/ip/group.png" srccredit="neo" />
+				<para>讲通话组添加进去</para>
+			</step>
+			
+			<step>
+				<para>第四步，写频</para>
 				<graphic format="png" fileref="images/Hytera/HM780/ip/3.jpg" srccredit="neo" />
 				<para>IP转中必须使用直频，即发射和接收同一个频率，时隙你可以随意，不能有扫描/漫游列表。</para>
 				<para>色码：必须跟主机相同，否则无法收发</para>
