@@ -48,7 +48,20 @@
 		<title>调制模式</title>
 		<para>Fusion 使用C4FM(连续4级频率调制），DRM使用4FSK（4级频移键控），而D-Star使用GMSK（高斯最小频移键控）。Tetra 使用π/4-差分正交相移键控调制(π/4-DQPSK)</para>
 		<para>DMR 使用TDMA（时分多址），C4FM和D-Star使用FDMA（频分多址）</para>
-
+		<section>
+			<title>DMR/YSF/P25</title>
+			<graphic format="png" fileref="images/mode/DMR-YSF-P25.png" srccredit="neo" />
+		</section>
+		<section>
+			<title>D-Star/NXDN</title>
+			<graphic format="png" fileref="images/mode/D-Star.png" srccredit="neo" />
+			<graphic format="png" fileref="images/mode/NXDN.png" srccredit="neo" />
+		</section>
+		<section>
+			<title>Tatra</title>
+			<graphic format="png" fileref="images/mode/Tetra.png" srccredit="neo" />
+			
+		</section>
 	</section>
 	<section>
 		<title>带宽</title>

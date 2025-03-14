@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <part id="analog">
 	<title>模拟电台</title>
+	<chapter>
+		<title>通信模式</title>
+		<graphic format="png" fileref="images/mode/FM.png" srccredit="neo" />
+		<graphic format="png" fileref="images/mode/AM.png" srccredit="neo" />
+		<graphic format="png" fileref="images/mode/SSB.png" srccredit="neo" />
+	</chapter>
 	<chapter id="天线的工作原理">
 		<title>天线的工作原理</title>
 		<para>我用最简单易懂的语言讲一下，一看你就明白了。</para>
