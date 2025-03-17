@@ -29,6 +29,11 @@
 		</procedure>
 		<para>现在呼叫对方，就能显示距离了。忘记拍图片了，下次补上。</para>
 	</section>
+	<section>
+		<title>DB26 接口定义</title>
+		<graphic format="png" fileref="images/Hytera/HM780/HM780-DB26.png" srccredit="neo" />
+	</section>
+	
 	<section id="hytera.ip">
 		<title>Hytera 海能达 HM780 IP中转</title>
 		<para>想加入 IP 中转的小伙伴，请私信我，这里是 BG7NYT，MMDVM：46073，深圳 DMR 439.790</para>
