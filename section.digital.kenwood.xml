@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="kenwood">
 	<title>Kenwood</title>
-	<section>
+	<section id="kenwood.cable.ch340">
 		<title>DIY 建武写频线</title>
 		<para>材料，需要一个 CH340 芯片，一条网线，568B线序的双绞线</para>
 		<graphic format="png" fileref="images/Kenwood/Cable/CH340.png" srccredit="neo" />
@@ -13,8 +13,7 @@
 		<graphic format="png" fileref="images/Kenwood/Cable/CH340-2.png" srccredit="neo" />
 		<para>最后使用捆扎带固定，这样更耐用。</para>
 	</section>
-	
-	<section>
+	<section id="kenwood.mmdvm.nxdn">
 		<title>NX-800 MMDVM 配置</title>
 		<section>
 			<title>车台配置</title>
