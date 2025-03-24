@@ -4,5 +4,6 @@
 	&chapter.digital.xml;
 	&chapter.mototrbo.xml;
 	&chapter.hytera.xml;
+	&section.digital.kenwood.xml;
 	&chapter.mmdvm.xml;
 </part>

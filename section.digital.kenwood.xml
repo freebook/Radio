@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="kenwood">
+	<title>Kenwood</title>
+	<section>
+		<title>NX-800 MMDVM 配置</title>
+		<section>
+			<title>车台配置</title>
+			<procedure>
+				<title> NX-800/NX-800E 设置</title>
+				<step>
+					<para>进入Windows 设备管理器，查看COM口设备信息</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/设备管理器.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>进入建武编程软件，这里使用的是 KPG-111D 5.20 版本</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/KPG-111D.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>点击“设置”菜单，进入“通信端口设置”，选择COM5（对应设备管理器中的写频线端口）</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/通信端口.png" srccredit="neo" />
+				</step>
+
+				<step>
+					<para>点击“机型”菜单，配置编程软件机型</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/产品信息.png" srccredit="neo" />
+				</step>
+
+				<step>
+					<para>点击“编辑”菜单，进入“NXDN”，在进入NXDN 1，设置“单元ID（自身）”，这里输入你在RadioID.net 申请的 NXDN ID</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-1.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>再进入 NXDN 2 菜单，设置“组 ID 列表”，写入 46000、46001、46010、46516</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
+				</step>
+
+				<step>
+					<para>完成所有配置之后，在“区域信息”中开始写频</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/区域信息.png" srccredit="neo" />
+					<para>例如第二行 438.800 发射接收相同，信道类型和发射模式选择NXDN，信道名称随意，注意：信道间隔（NXDN）一定要选择 甚窄带（6.25K 带宽）</para>
+					<para>RAN 解码/ RAN 编码，设置为 1 （对应 MMDVM 设置），RAN（Radio Access Number）无线电访问码，类似 DMR的色码。</para>
+					<para>如果你不上 MMDVM，仅仅是直频，上NXDN中继，可以使用 12.5K 窄带</para>
+				</step>
+
+				<step>
+					<para>最后，编辑上面438.800信道，点击下面的按钮“信道编辑”</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/信道编辑.png" srccredit="neo" />
+					<para>发射功率可以选择：低</para>
+					<para>可选信令（NXDN）选择：NXDN ID</para>
+					<para>PPT 选呼（NXDN）：组呼</para>
+					<para>ID 列表编号（NXDN）：1 （对应下面的序号）</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
+				</step>
+			</procedure>
+		</section>
+		<section>
+			<title>Radio ID 申请 NXDN ID </title>
+			<ulink url="https://radioid.net">https://radioid.net</ulink>
+			<para>NXDN 系统设计 ID 容量是 65535 个，如果全球 Ham 都分配是不够用的，所以 Radio ID 关闭了 NXDN 申请通道，这困扰了我很长一段时间。</para>
+			<para>申请 NXDN ID 需要给管理员申请，仅给有需要的Ham。</para>
+			<procedure>
+				<title>申请 NXDN 步骤</title>
+				<step>
+					<para>首先登陆 radioid.net 网站，点击 support</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-support.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>然后点击 Create New Issue</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-ticket.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>用你九年义务教育学会的塑料英语，写一封邮件</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-issue.png" srccredit="neo" />
+					<para>实在不会写，就拿中文写，然后用翻译软件，或者人工智能翻译，翻译成英文，粘贴进去。</para>
+				</step>
+				<step>
+					<para>就像这样，不用担心你的英语水平，能描述清楚，老外能看懂就行，告诉他你需要一个 NXDN ID</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-issue-details.png" srccredit="neo" />
+					<para>提交之后就耐心等待，我上午提交的，下午就分配了。</para>
+					<para>注意：收到分配邮件之后，你还需要点一下添加按钮，那个页面我没有截图，已经看不到了。</para>
+				</step>
+				<step>
+					<para>进入自己页面就可以看到 NXDN ID 了</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-bg7nyt.png" srccredit="neo" />
+				</step>
+			</procedure>
+		</section>
+
+		<section>
+			<title>MMDVM pi-star 配置</title>
+			<procedure>
+				<title>MMDVM 配置</title>
+				<step>
+					<para>启用 NXDN 模式</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>配置 NXDN ID（radioid.net 申请到的 NXDN ID）</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN-ID.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>配置 NXDN 反射器</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN-HOST.png" srccredit="neo" />
+				</step>
+				<step>
+					<para>配置完成之后进入仪表板</para>
+					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM.png" srccredit="neo" />
+					<para>注意：BH1NYR 是 NXDN 与 46001 转中呼号。也就是说 DMR/YSF 过来的信号都是 BH1NYR，然后你用 NXDN 回复，DMR/YSF 那边看到的是 BH1NYR，而不是你的呼号。</para>
+					<para>所以 NXDN 与 TG46001 是 back-to-back 方式连接的，也就是ham口中所说的背靠背连接。</para>
+				</step>
+			</procedure>
+		</section>
+	</section>
+</chapter>

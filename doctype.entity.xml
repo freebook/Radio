@@ -5,6 +5,7 @@
 <!ENTITY section.digital.freedmr.xml		SYSTEM "section.digital.freedmr.xml">
 
 <!ENTITY chapter.mototrbo.xml				SYSTEM "chapter.mototrbo.xml">
+<!ENTITY section.digital.kenwood.xml		SYSTEM "section.digital.kenwood.xml">
 
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
 <!ENTITY section.mmdvm.pi-star.xml			SYSTEM "section.mmdvm.pi-star.xml">
