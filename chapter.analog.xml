@@ -109,5 +109,5 @@
 		</qandaset>
 		<para></para>
 	</chapter>
-
+	&chapter.device.xml;
 </part>

@@ -51,7 +51,10 @@
 
 	<!-- &book.dedication.xml; &book.preface.xml; -->
 	&chapter.ham.xml;
+	
 	&chapter.analog.xml;
 	&part.digital.xml;
+	&chapter.radio.xml;
+	
 	&section.faq.xml;
 </book>

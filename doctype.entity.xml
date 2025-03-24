@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY chapter.radio.xml        			SYSTEM "chapter.radio.xml">
 <!ENTITY chapter.analog.xml					SYSTEM "chapter.analog.xml">
 <!ENTITY part.digital.xml					SYSTEM "part.digital.xml">
 <!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
 <!ENTITY section.digital.freedmr.xml		SYSTEM "section.digital.freedmr.xml">
 
+<!ENTITY chapter.device.xml        			SYSTEM "chapter.device.xml">
 <!ENTITY chapter.mototrbo.xml				SYSTEM "chapter.mototrbo.xml">
 <!ENTITY section.digital.kenwood.xml		SYSTEM "section.digital.kenwood.xml">
+<!ENTITY chapter.hytera.xml        			SYSTEM "chapter.hytera.xml">
 
 <!ENTITY chapter.mmdvm.xml					SYSTEM "chapter.mmdvm.xml">
 <!ENTITY section.mmdvm.pi-star.xml			SYSTEM "section.mmdvm.pi-star.xml">
@@ -18,6 +21,5 @@
 <!ENTITY section.ham.1.xml        			SYSTEM "section.ham.1.xml">
 <!ENTITY section.ham.2.xml        			SYSTEM "section.ham.2.xml">
 <!ENTITY section.ham.3.xml        			SYSTEM "section.ham.3.xml">
-<!ENTITY chapter.hytera.xml        			SYSTEM "chapter.hytera.xml">
 
 <!ENTITY section.faq.xml					SYSTEM "section.faq.xml">
