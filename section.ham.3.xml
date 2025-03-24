@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="digital">
+<section id="digital">
 	<title>数字电台</title>
 	<section>
 		<title>迎接数字电台时代的到来</title>
@@ -66,4 +66,4 @@
 			<para>现在你就可以在开车途中使用VOX进行通联了。 注意调整一下VOX麦克风增益，否则已过减速带就会乱发射。</para>
 		</section>
 	</section>
-</chapter>
+</section>
