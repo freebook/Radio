@@ -107,6 +107,7 @@
 					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM.png" srccredit="neo" />
 					<para>注意：BH1NYR 是 NXDN 与 46001 转中呼号。也就是说 DMR/YSF 过来的信号都是 BH1NYR，然后你用 NXDN 回复，DMR/YSF 那边看到的是 BH1NYR，而不是你的呼号。</para>
 					<para>所以 NXDN 与 TG46001 是 back-to-back 方式连接的，也就是ham口中所说的背靠背连接。</para>
+					<para>只有都是 NXDN 设备，两者相互之间才能显示对方呼号。</para>
 				</step>
 			</procedure>
 		</section>
