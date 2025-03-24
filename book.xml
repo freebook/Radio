@@ -49,12 +49,9 @@
 		</keywordset>
 	</info>
 
-	<!-- &book.dedication.xml; &book.preface.xml; -->
-	&chapter.ham.xml;
-	
+	<!-- &book.dedication.xml; &book.preface.xml; -->	
+	&chapter.radio.xml;
 	&chapter.analog.xml;
 	&part.digital.xml;
-	&chapter.radio.xml;
-	
 	&section.faq.xml;
 </book>

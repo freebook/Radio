@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="device">
 	<title>电台设备</title>
-	<section id="">
+	<section id="yaesu">
 		<title>Yaesu</title>
 		<section>
 			<title>RJ11 口手麦定义 MH-48 手麦接口</title>
@@ -33,6 +33,6 @@ pin6:	PTT(blue)/(clone FT1802E)
 			]]>
 			</screen>
 		</section>
-		
+
 	</section>
 </chapter>
