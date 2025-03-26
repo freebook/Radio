@@ -51,7 +51,6 @@
 
 	<!-- &book.dedication.xml; &book.preface.xml; -->	
 	&chapter.radio.xml;
-	&chapter.analog.xml;
-	&part.digital.xml;
+	&chapter.device.xml;
 	&section.faq.xml;
 </book>

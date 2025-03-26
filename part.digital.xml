@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<part id="digital">
-	<title>数字业余无线电</title>
-	&chapter.digital.xml;
-	&chapter.mototrbo.xml;
-	&chapter.hytera.xml;
-	&section.digital.kenwood.xml;
-	&chapter.mmdvm.xml;
-</part>

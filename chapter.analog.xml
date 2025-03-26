@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<part id="analog">
+<chapter id="analog">
 	<title>模拟电台</title>
-	<chapter>
+	<section>
 		<title>通信模式</title>
 		<graphic format="png" fileref="images/mode/FM.png" srccredit="neo" />
 		<graphic format="png" fileref="images/mode/AM.png" srccredit="neo" />
 		<graphic format="png" fileref="images/mode/SSB.png" srccredit="neo" />
-	</chapter>
-	<chapter id="天线的工作原理">
+	</section>
+	<section id="天线的工作原理">
 		<title>天线的工作原理</title>
 		<para>我用最简单易懂的语言讲一下，一看你就明白了。</para>
 		<para>交流电大家都知道，我们用的交流电是50Hz，他会在导线中传输。</para>
@@ -15,8 +15,8 @@
 		<para>如果旁边有一根2米长的金属导线，跟它保持平行，我们叫极化方向。那么这根导线就能将前面那个根导线射出交流电接收下来。</para>
 		<para>同理将交流电频率提高到 430MHz，将导线修剪成长度70CM，就能将电流发射出去。</para>
 		<para>无线充电也是这种原理。</para>
-	</chapter>
-	<chapter id="浅谈电磁波相位">
+	</section>
+	<section id="浅谈电磁波相位">
 		<title>浅谈电磁波相位</title>
 		<para>
 			电磁波相位，如果不是电子和无线点专业的人根本接触不到。我也是在跟一个Ham通联的过程中第一次听过这个词，但是我瞬间就明白了什么是电磁波相位。很多玩了十几年的老Ham可能都没有接触过电磁波相位的知识。所以我想有必要做一下科普。
@@ -56,8 +56,8 @@
 			<para>所以在民用领域很少有天线阵，同频同播等等技术的应用。</para>
 			<para>汽车排气管消音，还有降噪耳机，就是用这种原理实现的。即相同频率发射一个反相位的声音，声音就消失了。</para>
 		</section>
-	</chapter>
-	<chapter>
+	</section>
+	<section>
 		<title>电台电源</title>
 		<graphic format="png" fileref="images/power/power.webp" srccredit="neo" />
 		<para>下面让我来一个一个问题回答。</para>
@@ -108,6 +108,5 @@
 			</qandaentry>
 		</qandaset>
 		<para></para>
-	</chapter>
-	&chapter.device.xml;
-</part>
+	</section>
+</chapter>

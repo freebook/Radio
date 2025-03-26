@@ -2,6 +2,8 @@
 <part id="radio">
 	<title>业余无线电</title>
 	&chapter.ham.xml;
+	&chapter.analog.xml;
+	&chapter.digital.xml;
 	<chapter id="HamsOverIP">
 		<title>Hams Over IP</title>
 		<section>
@@ -62,10 +64,5 @@
 			<para>再放大镜栏输入你需要拨打的分机号</para>
 		</section>
 	</chapter>
-	<chapter id="置物架">
-		<title>定制/DIY 电台桌/置物架</title>
-		<graphic format="png" fileref="images/table/0.png" srccredit="neo" />
-		<para>效果图</para>
-		<graphic format="png" fileref="images/table/1.png" srccredit="neo" />
-	</chapter> 
+
 </part>

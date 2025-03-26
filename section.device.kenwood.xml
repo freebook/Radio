@@ -3,15 +3,23 @@
 	<title>Kenwood</title>
 	<section id="kenwood.cable.ch340">
 		<title>DIY 建武写频线</title>
-		<para>材料，需要一个 CH340 芯片，一条网线，568B线序的双绞线</para>
-		<graphic format="png" fileref="images/Kenwood/Cable/CH340.png" srccredit="neo" />
-		<para>网线剪断，按照线序焊接</para>
-		<graphic format="png" fileref="images/Kenwood/Cable/CH340-1.png" srccredit="neo" />
-		<para>绿色 连接 GND 接地</para>
-		<para>白/蓝 连接 TX</para>
-		<para>橙色 连接 RX</para>
-		<graphic format="png" fileref="images/Kenwood/Cable/CH340-2.png" srccredit="neo" />
-		<para>最后使用捆扎带固定，这样更耐用。</para>
+		<section>
+			<title>RJ45/RJ11 水晶头写频线</title>
+
+			<para>材料，需要一个 CH340 芯片，一条网线，568B线序的双绞线</para>
+			<graphic format="png" fileref="images/Kenwood/Cable/CH340.png" srccredit="neo" />
+			<para>网线剪断，按照线序焊接</para>
+			<graphic format="png" fileref="images/Kenwood/Cable/CH340-1.png" srccredit="neo" />
+			<para>绿色 连接 GND 接地</para>
+			<para>白/蓝 连接 TX</para>
+			<para>橙色 连接 RX</para>
+			<graphic format="png" fileref="images/Kenwood/Cable/CH340-2.png" srccredit="neo" />
+			<para>最后使用捆扎带固定，这样更耐用。</para>
+		</section>
+		<section>
+			<title>K 头写频线</title>
+			<graphic format="png" fileref="images/Kenwood/Cable/K-Cable.png" srccredit="neo" />
+		</section>
 	</section>
 	<section id="kenwood.mmdvm.nxdn">
 		<title>NX-800 MMDVM 配置</title>
