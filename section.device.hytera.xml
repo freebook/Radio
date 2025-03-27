@@ -29,7 +29,7 @@
 		</procedure>
 		<para>现在呼叫对方，就能显示距离了。忘记拍图片了，下次补上。</para>
 	</section>
-	<section>
+	<section id="hytera.db26">
 		<title>DB26 接口定义</title>
 		<graphic format="png" fileref="images/Hytera/HM780/HM780-DB26.png" srccredit="neo" />
 	</section>

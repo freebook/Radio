@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <part id="digital"> <title>数字业余无线电</title> &chapter.mmdvm.xml; </part> -->
 <chapter id="yaesu">
-		<title>Yaesu</title>
-		<section>
-			<title>RJ11 口手麦定义 MH-48 手麦接口</title>
-			<para>Yaesu FT-1500M/1802E/2800</para>
-			<para>Yaesu FT-1807/7800R/8800R/8900R</para>
-			<screen>
+	<title>Yaesu</title>
+	<section id="yaesu.interface">
+		<title>RJ11 口手麦定义 MH-48 手麦接口</title>
+		<para>Yaesu FT-1500M/1802E/2800</para>
+		<para>Yaesu FT-1807/7800R/8800R/8900R</para>
+		<screen>
 			<![CDATA[
 PIN1:	SW2(green)
 PIN2:	SW1(brown)
@@ -15,11 +15,11 @@ PIN4:	GROUND(screen)
 PIN5:	MIC(white)
 pin6:	PTT(blue)/(clone FT1802E)
 			]]>
-			</screen>
-		</section>
-		<section>
-			<title>RJ45 口手麦定义</title>
-			<screen>
+		</screen>
+	</section>
+	<section id="yaesu.interface.rj45">
+		<title>RJ45 口手麦定义</title>
+		<screen>
 			<![CDATA[
 1:DOWN
 2:UP
@@ -30,7 +30,7 @@ pin6:	PTT(blue)/(clone FT1802E)
 7:GND
 8:FAST			
 			]]>
-			</screen>
-		</section>
+		</screen>
+	</section>
 
-	</chapter>
+</chapter>
