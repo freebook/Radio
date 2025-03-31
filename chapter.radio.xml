@@ -63,6 +63,10 @@
 			<graphic format="png" fileref="images/hamsoverip/jami-4.png" srccredit="neo" />
 			<para>再放大镜栏输入你需要拨打的分机号</para>
 		</section>
+		<section>
+			<title>电话本</title>
+			<ulink url="https://hamsoverip.com/phonebook">https://hamsoverip.com/phonebook</ulink>
+		</section>
 	</chapter>
 
 </part>

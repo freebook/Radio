@@ -4,6 +4,7 @@
 	&section.mmdvm.pi-star.xml;
 	&section.mmdvm.wpsd.xml;
 	&section.mmdvm.repeater.xml;
+	&section.mmdvm.pager.xml;
 	&section.digital.freedmr.xml;
 	<section>
 		<title>DroidStar</title>

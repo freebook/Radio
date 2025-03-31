@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <section id="pager">
+	<title>传呼机</title>
+	<ulink url="https://hampager.de" />  
+</section>
+<!-- <section id="digital">
+	<title>数字电台</title>
+		<section>
+			<title>数字机开辟了哪些新玩法</title>
+			<itemizedlist>
+				<title>车载蓝牙玩法</title>
+				<listitem>首先开启车载导航，进入蓝牙配对</listitem>
+				<listitem>开启数字电台的蓝牙，与车载导航配对</listitem>
+				<listitem>建立连接，车载导航上出现出接听图标，按下接听电话按钮，链接成功，电台上的蓝牙图标旁边会出现一个小黑点。</listitem>
+				<listitem>开启电台VOX功能。</listitem>
+			</itemizedlist>
+			<para>现在你就可以在开车途中使用VOX进行通联了。 注意调整一下VOX麦克风增益，否则已过减速带就会乱发射。</para>
+		</section>
+</section>
+
+<section id="数字电台">
+    <title>数字电台</title>
+    <para>你准备好了吗？迎接数字电台时代的到来。</para>
+    <section>
+        <title>迎接数字电台时代的到来</title>
+        <section>
+            <title>停止购入新的模拟电台</title>
+            <para>
+                虽然业余电台这块模拟还会保留很多年，但是我建议你从现在开始不要再购买全新且价格比较高的模拟电台，二手的可以玩玩。购入全新电台时无论哪个品牌，你至少要考虑兼容一种数字模式。</para>
+        </section>
+        <section>
+            <title>不要抗拒新鲜事物</title>
+            <para>
+                每一次技术革命，都会引发一次社会的变革，这是历史的必然规律。新技术带来的新产品，新产品商业化带来更多的利润，促使下游产品的更新。然后继续迭代开发新技术，产生良性循环。</para>
+            <para>我很想骑马上班，想想汽车有空调也不错。 我对大哥大很有情怀，没办法还是iphone更好用。</para>
+        </section>
+    </section>
+    <section>
+        <title>数字电台使用相关注意事项</title>
+       
+        <section>
+            <title>直频模式的注意事项</title>
+            <para>在直频模式下，模拟与数字有哪些差异？</para>
+            <para>模拟没有延迟，数字解码有延迟 </para>
+            <para>在一些苛刻的环境下使用模拟电台更合适，例如指挥塔吊，升降机。你需要随时喊”停“的情况。
+                因为如果你使用数字电台指挥升降机，你按下PPT喊停，另一边操作的人听到停字是有延迟的，这就造成了误差。 但也不是没有解决方法，就是你提前按下PPT
+                随时待命并喊停，不要再喊停的时候去按PPT。</para>
+        </section>
+        <section>
+            <title>弱信号怎么办</title>
+            <para>模拟电台抄收弱信号是可以开启静噪，能够勉强听到对方讲话，可以勉强通联。那么数字电台怎么办？ </para>
+            <orderedlist>
+                <title>对于数字电台弱信号会出现两个情况：</title>
+                <listitem>只能看到联系人ID（如果写入通信录可能看到呼号）听不到语音。</listitem>
+                <listitem>语音出现严重马赛克（VCD卡碟时的声音）</listitem>
+                <listitem>遇到这种情况无非是调整位置，提高发射功率，但还有一个选择可以发送短信。</listitem>
+            </orderedlist>
+            <para>语音数据包比较大，所以可能发射过程容易丢失，还原时出现马赛克声音，但文本短信数据量小，一点有一个好的信号间隙，就有可能发射出去。</para>
+        </section>
+
+    </section>
+
+
+</section> -->

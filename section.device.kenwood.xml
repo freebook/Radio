@@ -20,6 +20,24 @@
 			<title>K 头写频线</title>
 			<graphic format="png" fileref="images/Kenwood/Cable/K-Cable.png" srccredit="neo" />
 		</section>
+		<section>
+			<title>DB25 接口定义</title>
+			<screen>
+			<![CDATA[
+Pin #4	PPT
+Pin #8	BUS1(哑音)
+Pin #7	GUD	接地
+Pin #6	音频输入
+Pin #7	音频输出	
+Pin #8	TOR	
+Pin #17	高频输出
+Pin #14	13.8V+
+			]]>
+			</screen>
+<!-- 			<ulink url="https://wiki.w3axl.com/index.php/NX5000_Mobiles">USB Programming Cable</ulink> -->
+			<ulink url="https://wiki.w3axl.com/index.php/NX5000_Interfacing">Kenwood NX-5000 DB25定义</ulink>
+		</section>
+		
 	</section>
 	<section id="kenwood.mmdvm.nxdn">
 		<title>NX-800 MMDVM 配置</title>

@@ -16,11 +16,12 @@
 <!ENTITY section.mmdvm.setup.xml			SYSTEM "section.mmdvm.setup.xml">
 <!ENTITY section.mmdvm.wpsd.xml				SYSTEM "section.mmdvm.wpsd.xml">
 <!ENTITY section.mmdvm.repeater.xml			SYSTEM "section.mmdvm.repeater.xml">
+<!ENTITY section.mmdvm.pager.xml   			SYSTEM "section.mmdvm.pager.xml">
 
 <!ENTITY chapter.ham.xml        			SYSTEM "chapter.ham.xml">
 <!ENTITY section.ham.0.xml        			SYSTEM "section.ham.0.xml">
 <!ENTITY section.ham.1.xml        			SYSTEM "section.ham.1.xml">
 <!ENTITY section.ham.2.xml        			SYSTEM "section.ham.2.xml">
-<!ENTITY section.ham.3.xml        			SYSTEM "section.ham.3.xml">
+
 
 <!ENTITY section.faq.xml					SYSTEM "section.faq.xml">
