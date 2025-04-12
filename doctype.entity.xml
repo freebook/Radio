@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ENTITY chapter.radio.xml        			SYSTEM "chapter.radio.xml">
 <!ENTITY chapter.analog.xml					SYSTEM "chapter.analog.xml">
-<!ENTITY part.digital.xml					SYSTEM "part.digital.xml">
 <!ENTITY chapter.digital.xml				SYSTEM "chapter.digital.xml">
 <!ENTITY section.digital.freedmr.xml		SYSTEM "section.digital.freedmr.xml">
+<!ENTITY chapter.radio.hoip.xml    			SYSTEM "chapter.radio.hoip.xml">
 
 <!ENTITY chapter.device.xml        			SYSTEM "chapter.device.xml">
 <!ENTITY section.device.mototrbo.xml		SYSTEM "section.device.mototrbo.xml">
@@ -21,7 +21,5 @@
 <!ENTITY chapter.ham.xml        			SYSTEM "chapter.ham.xml">
 <!ENTITY section.ham.0.xml        			SYSTEM "section.ham.0.xml">
 <!ENTITY section.ham.1.xml        			SYSTEM "section.ham.1.xml">
-<!ENTITY section.ham.2.xml        			SYSTEM "section.ham.2.xml">
-
 
 <!ENTITY section.faq.xml					SYSTEM "section.faq.xml">
