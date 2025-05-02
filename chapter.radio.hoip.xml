@@ -158,6 +158,13 @@
 		</para>
 	</section>
 	<section>
+		<title>SIP 服务器</title>
+		<para>Proxy: sip.netkiller.cn:5060</para>
+		<para>协议: UDP，默认编码：G722</para>
+		<para>Avaya HTTP: 139.9.54.211</para>
+		<para>电话号码本：<ulink url="https://docs.qq.com/sheet/DSFVNdUNFbWRLQWpF" /></para>
+	</section>
+	<section>
 		<title>SIP 拨打会遇到那些常见问题？</title>
 		<section>
 			<title>拨打电话没有忙音</title>
