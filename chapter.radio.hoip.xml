@@ -177,4 +177,11 @@
 			<para>请检查防火墙策略，是否使用了深信服等网上行为管理等设备。</para>
 		</section>
 	</section>
+	<section>
+		<title>电话机选择</title>
+		<para>目前经过火腿测试，可以使用的话机列表</para>
+		<para>Yaelink 亿联系列话机</para>
+		<para>Avaya G96XX 系列</para>
+		<para>宝利通(Polycom) SoundPoint IP 331</para>
+	</section>
 </chapter>
