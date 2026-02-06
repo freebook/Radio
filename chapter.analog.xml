@@ -57,7 +57,7 @@
 			<para>汽车排气管消音，还有降噪耳机，就是用这种原理实现的。即相同频率发射一个反相位的声音，声音就消失了。</para>
 		</section>
 	</section>
-	<section>
+	<section id="通信电源">
 		<title>电台电源</title>
 		<graphic format="png" fileref="images/power/power.webp" srccredit="neo" />
 		<para>下面让我来一个一个问题回答。</para>

@@ -6,7 +6,8 @@
 	&section.mmdvm.repeater.xml;
 	&section.mmdvm.pager.xml;
 	&section.digital.freedmr.xml;
-	<section>
+	&section.mmdvm.modes.xml;
+	<section id="mmdvm.DroidStar">
 		<title>DroidStar</title>
 	</section>
 </chapter>

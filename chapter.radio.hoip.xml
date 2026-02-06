@@ -20,7 +20,7 @@
 		<para>会议功能：为个人、俱乐部和团体提供会议桥接服务，方便爱好者们进行群组讨论、技术交流、应急通信演练等活动。</para>
 
 	</section>
-	<section>
+	<section id="hoip.create">
 		<title>创建账户</title>
 		<para>用户需要先在 Hams Over IP 的票务系统中创建账户，并通过验证邮件完成注册。</para>
 		<ulink
@@ -32,7 +32,7 @@
 		<graphic format="png" fileref="images/hamsoverip/signin.png"
 			srccredit="neo" />
 	</section>
-	<section>
+	<section id="hoip.number">
 		<title>申请分机</title>
 		<para>账户创建成功后，就可以申请新的分机号了，你要给管理创建一个 Ticket（申请单）</para>
 		<para>如果你英文不好，准备号翻译软件。</para>
@@ -49,7 +49,7 @@
 			srccredit="neo" />
 		<para>内容包括了服务器地址、端口号、网络协议、用户名和密码</para>
 	</section>
-	<section>
+	<section id="hoip.client">
 		<title>Jami VOIP 客户端</title>
 		<para>
 			<ulink url="https://jami.net/" />
@@ -71,11 +71,36 @@
 			srccredit="neo" />
 		<para>再放大镜栏输入你需要拨打的分机号</para>
 	</section>
-	<section>
+	<section id="hoip.address">
 		<title>电话本</title>
 		<ulink url="https://hamsoverip.com/phonebook">https://hamsoverip.com/phonebook</ulink>
 	</section>
-	<section>
+	<section id="hoip.phone">
+		<title>那些话机可以使用？</title>
+		<para>经过几天对各位 Ham 手里的话机测试，我们发现 Yaelink(亿联)兼容性最好。</para>
+		<para>目前圈子里的 Avaya 9611G 最多，它支持音频编解码器： G722（默认），PCMA，PCMU，G726-23K
+		</para>
+
+
+		<section>
+			<title>电话机选择</title>
+			<para>目前经过火腿测试，可以使用的话机列表</para>
+			<para>Yaelink 亿联系列话机</para>
+			<para>Avaya G96XX 系列</para>
+			<para>宝利通(Polycom) SoundPoint IP 331</para>
+			<para>Cisco 7945/9951</para>
+
+			<para>Yaelink 支持： Opus,
+				G722,PCMA,PCMU,G729,G723,G726(16/24/32/40),G729AB,iLBC(15.2kbps),iLBC(13.33kbps)
+			</para>
+		</section>
+		<section>
+			<title>传统电话网关</title>
+			<para>Linksys 网关支持：G711(PCMA，PCMU),G723,G729A,G726(16/24/32/40),
+			</para>
+		</section>
+	</section>
+	<section id="hoip.china">
 		<title>中国 HOIP 服务</title>
 		<section>
 			<title>中国 Hams over IP 的发展情况？</title>
@@ -86,7 +111,8 @@
 				SIP/H323 和 PBX 相关工作。期间也想过把两部话机配置起来，最终失败，懒得再折腾，这导致两部话机在家里一放就是10年。
 			</para>
 			<para>幸亏 BA7NEG 提起此事，赶紧把两部话机翻出来，让 BA7NEG 抽空过来取。几天后 BA7NEG 过来拿，一部是
-				Yaelink 一部是 Avaya 1408，由于没有 Poe 交换机，选了 Yaelink。</para>
+				Yaelink 一部是 Avaya 1408，由于没有 Poe 交换机，选了 Yaelink。
+			</para>
 			<para>
 				BA7NEG 回到家里，当晚刷好固件，并再 Hams over ip
 				<ulink url="https://hamsoverip.com" />
@@ -100,15 +126,18 @@
 			<para>VoIP
 				这种业务如今已经成为昨日黄花，移动互联网的出现，他的市场已经挤压到极限，只有屈指可数的几家企业在VOIP存量市场中艰难的生存。打开小黄鱼，二手设备白菜价，30元的
 				Avaya/Yaelink/Cisco 话机遍地都是。很多设备已经停产，厂商不再维护，资料很少。很多开源的 SIP Proxy/PBX
-				服务器也不再更新代码，停止升级和维护，网上的资料乱七八糟。导致自建 SIP 服务器十分艰难。</para>
+				服务器也不再更新代码，停止升级和维护，网上的资料乱七八糟。导致自建 SIP 服务器十分艰难。
+			</para>
 			<para>最开始使用 OpenSIPS 可以拨通，但是没有语音，找不到解决方法。换成 asterisk 也失败。换成 yate
-				资料更少，最终失败。最后发现 kamailio 的代码仓库还在积极更新，就选了它，最终配置成功了。</para>
+				资料更少，最终失败。最后发现 kamailio 的代码仓库还在积极更新，就选了它，最终配置成功了。
+			</para>
 			<para>我把 kamailio 服务器公布在微信群，分配了一组 6XXX 号码，结果意想不到是，火腿小伙伴积极响应，BA7JWV
 				成功被 BA7NEG 洗脑，接下来几天里绿包包群里全是在讨论 HOIP 话题。BA7JWV 一次性在小黄鱼购入三台 Avaya
 				话机，BG7NQF 随后够入两台 Avaya 话机，BA7NCT 上班第一件是去公司仓库翻出公司淘汰的 Yaelink 话机。
 			</para>
 			<para>kamailio 还解决了 linksys 网关的问题，用使用 Polycom 模拟话机连接 linksys
-				网关可以拨通其他人号码。</para>
+				网关可以拨通其他人号码。
+			</para>
 			<para>由于 kamailio 只能提供单纯的 SIP Proxy 服务，也就是话机到话机服务，我又在 BD7PVD 技术支持下切到了
 				freeSWITCH，freeSWITCH 更为强大，提供类似MMDVM 鹦鹉螺回音测试，还提供会议房间，组呼叫 等等功能。
 			</para>
@@ -124,7 +153,7 @@
 			<para>至此，这是一个中国 Ham 历上的一个重要节点，值得每个 Ham 铭记。</para>
 		</section>
 
-		<section>
+		<section id="hoip.future">
 			<title>中国 HOIP 未来</title>
 			<para>就像 MMDVM 的 BM 服务器掌握在外国人手里，我们只有使用权，没有控制权。</para>
 			<para>所以我们必须自建服务器，自己全权管理，不受任何境外国家/组织的控制。</para>
@@ -141,30 +170,28 @@
 		</section>
 		<section>
 			<title>申请要求</title>
-			<para>首先申請 Hams over IP 电话号码 <ulink url="https://hamsoverip.com" /></para>
+			<para>
+				首先申請 Hams over IP 电话号码
+				<ulink url="https://hamsoverip.com" />
+			</para>
 			<para>例如获得号码为 300177，我们就会帮你开通 177 号码。</para>
-			<para>如果没有HOIP号码，可以使用DMR ID(radioid.net) 例如我的ID是 4600441，开通号码是 441</para>
+			<para>如果没有HOIP号码，可以使用DMR ID(radioid.net) 例如我的ID是 4600441，开通号码是 441
+			</para>
+		</section>
+		<section id="hoip.sip">
+			<title>SIP 服务器</title>
+			<para>Proxy: sip.netkiller.cn:5061</para>
+			<para>协议: UDP，默认编码：G722</para>
+			<para>Avaya HTTP: 139.9.54.211</para>
+			<para>
+				电话号码本：
+				<ulink url="https://docs.qq.com/sheet/DSFVNdUNFbWRLQWpF" />
+			</para>
 		</section>
 	</section>
-	<section>
-		<title>那些话机可以使用？</title>
-		<para>经过几天对各位 Ham 手里的话机测试，我们发现 Yaelink(亿联)兼容性最好。</para>
-		<para>目前圈子里的 Avaya 9611G 最多，它支持音频编解码器： G722（默认），PCMA，PCMU，G726-23K
-		</para>
-		<para>Yaelink 支持： Opus,
-			G722,PCMA,PCMU,G729,G723,G726(16/24/32/40),G729AB,iLBC(15.2kbps),iLBC(13.33kbps)
-		</para>
-		<para>Linksys 网关支持：G711(PCMA，PCMU),G723,G729A,G726(16/24/32/40),
-		</para>
-	</section>
-	<section>
-		<title>SIP 服务器</title>
-		<para>Proxy: sip.netkiller.cn:5060</para>
-		<para>协议: UDP，默认编码：G722</para>
-		<para>Avaya HTTP: 139.9.54.211</para>
-		<para>电话号码本：<ulink url="https://docs.qq.com/sheet/DSFVNdUNFbWRLQWpF" /></para>
-	</section>
-	<section>
+
+
+	<section id="hoip.faq">
 		<title>SIP 拨打会遇到那些常见问题？</title>
 		<section>
 			<title>拨打电话没有忙音</title>
@@ -177,12 +204,5 @@
 			<para>请检查防火墙策略，是否使用了深信服等网上行为管理等设备。</para>
 		</section>
 	</section>
-	<section>
-		<title>电话机选择</title>
-		<para>目前经过火腿测试，可以使用的话机列表</para>
-		<para>Yaelink 亿联系列话机</para>
-		<para>Avaya G96XX 系列</para>
-		<para>宝利通(Polycom) SoundPoint IP 331</para>
-		<para>Cisco 7945/9951</para>
-	</section>
+
 </chapter>
