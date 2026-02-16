@@ -32,11 +32,12 @@ diskutil unmountDisk /dev/disk2
 			<para>将镜像文件写入 SD Card</para>
 			<screen>
 			<![CDATA[
-neo@Neo-Mac-mini-M4 ~ % sudo dd if=Pi-Star_RPi_V4.2.3_18-Apr-2025.img of=/dev/rdisk4 bs=100m
-dd: /dev/rdisk4: Device not configured
-3+0 records in
-2+0 records out
-209715200 bytes transferred in 74.394599 secs (2818957 bytes/sec)
+neo@Mac Downloads % sudo dd if=Pi-Star_RPi_V4.2.3_18-Apr-2025.img of=/dev/rdisk12 bs=64m status=progress
+Password:
+  3489660928 bytes (3490 MB, 3328 MiB) transferred 259.135s, 13 MB/s
+52+1 records in
+52+1 records out
+3493855744 bytes transferred in 259.454044 secs (13466183 bytes/sec)
 			]]>
 			</screen>
 		</section>
