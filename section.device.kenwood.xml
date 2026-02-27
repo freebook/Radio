@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="kenwood">
 	<title>Kenwood</title>
+	<section>
+		<title>NEXEDGE</title>
+		<para>NEXEDGE 是建伍（KENWOOD）推出的数字对讲机系统品牌，核心采用NXDN（Next Generation
+			Digital Narrowband）开放标准，2008 年推出，支持数模双模，便于从传统模拟系统平滑迁移。
+		</para>
+
+		<orderedlist>
+			<title>核心技术与特点</title>
+			<listitem>空中接口：基于 FDMA，采用 4 级 FSK 调制、AMBE+2 语音编码，信道带宽支持 12.5 kHz（窄带）
+				与 6.25 kHz（甚窄带），弱信号下仍有低误码率。
+			</listitem>
+			<listitem>互通性：与艾可慕（Icom）的 IDAS 系统同属 NXDN 标准，可数字互通；多数机型兼容 FM
+				模拟，现有设备仍然可以使用。
+			</listitem>
+			<listitem>系统形态：覆盖常规数字、常规 IP 联网、集群及广域集群 IP
+				联网，支持中继台联网与漫游，适合专业商用与公共安全场景。业余无线电主要是直频和中继模式。
+			</listitem>
+		</orderedlist>
+		<para>下面是我使用NXDN一段时间的心得分享</para>
+		<section>
+			<title>窄带/甚窄带</title>
+
+			<para>使用窄带还是甚窄带？NXDN编程（写频）的时候可以选择“窄带（12.5kHz带宽，9600波特率）”与“甚窄带（6.25kHz带宽）4800波特率”，手首次使用NXDN电台，两个模式极难分辨，感觉没啥区别。只有长时间使用，你才能发现他们的区别，相比之下窄带语音更饱满。
+			</para>
+			<para>在若信号时甚窄带比窄带会更有优势，此时窄带会只能断断续续或无法解码（听到语音），甚窄带可以保持稳定通联，也就是更容易解码。我跟
+				BA7NEG
+				在家中使用“窄带通信”，外出露营使用“甚窄带”，我使用甚窄带低功率能从露营地与家中的BA7NEG稳定通联，反观窄带+高功率偶尔也会无法解码。
+			</para>
+			<para>结论，甚窄带通联更远，更稳定。</para>
+			<para>另外甚窄带比窄带还有一个优势，省电。相同功率所用电流如下，甚窄带只有1.8A电流</para>
+			<table>
+				<title>表格标题</title>
+				<tgroup cols="2">
+					<thead>
+						<row>
+							<entry>模式</entry>
+							<entry>功率</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>模拟（低功率）</entry>
+							<entry>2.81 安</entry>
+						</row>
+						<row>
+							<entry>模拟（高功率）</entry>
+							<entry>4.8 安</entry>
+						</row>
+						<row>
+							<entry>NXDN 甚窄带（低功率）</entry>
+							<entry>1.8～1.9 安</entry>
+						</row>
+						<row>
+							<entry>NXDN 甚窄带（高功率）</entry>
+							<entry>3.2～3.8 安</entry>
+						</row>
+						<row>
+							<entry>NXDN 窄带（低功率）</entry>
+							<entry>2.8 安</entry>
+						</row>
+						<row>
+							<entry>NXDN 窄带（高功率）</entry>
+							<entry>4.8 安</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+			<para>实测还发现一个现象，144.500 ～ 146.500 功率也略有变化。</para>
+		</section>
+		<section>
+			<title>语音评价</title>
+			<para>经过我们（BG7NYT和BA7NEG）这段实测，我们对当下我们熟悉数字电台做了语音对比，这里声明一下，听力这东西仁者见仁，智者见智，主观因素太多。不过我们都玩数字转盘和解码器，手里也有千元耳机，对音质还有要求的，虽然不敢说是发烧友，但是也不至于是木耳。经过我们对比如下：</para>
+			<screen>
+			<![CDATA[
+模拟 > NXDN > C4FM > D-Star > DMR
+			]]>
+			</screen>
+			<para>以上测试均在直频下完成，这里面 DMR 给人印象最差，它的极易出现声音扭曲变形，目前来看 FDMA 的鲁棒性由于 TDMA，例如频偏，误码，纠错等等方面。TDMA 对设备要求太高，火腿手上的设备参差不齐，各种泉州机，还有二手的，有改频的…… 这些因素决定了最终大家对电台语音听感的感受</para>
+			<para>C4FM 与 D-Star 相比的优势是有两个，一是C4FM 有 VW 高速语音，D-Star GMSK 6.25kHz 4800bps。二是声码器优势，八重洲使用的AMBE2+声码器，D-Star 使用的是 AMBE1代</para>
+			<para>NXDN 还原最好，接近模拟效果。</para>
+			<para>最后，无线电被发明出来是解决通信问题，并不是服务耳朵，能通联就是快乐。</para>
+		</section>
+	</section>
 	<section id="kenwood.cable.ch340">
 		<title>DIY 建武写频线</title>
 		<section>
 			<title>RJ45/RJ11 水晶头写频线</title>
 
 			<para>材料，需要一个 CH340 芯片，一条网线，568B线序的双绞线</para>
-			<graphic format="png" fileref="images/Kenwood/Cable/CH340.png" srccredit="neo" />
+			<graphic format="png"
+				fileref="images/Kenwood/Cable/CH340.png" srccredit="neo" />
 			<para>网线剪断，按照线序焊接</para>
-			<graphic format="png" fileref="images/Kenwood/Cable/CH340-1.png" srccredit="neo" />
+			<graphic format="png"
+				fileref="images/Kenwood/Cable/CH340-1.png" srccredit="neo" />
 			<para>绿色 连接 GND 接地</para>
 			<para>白/蓝 连接 TX</para>
 			<para>橙色 连接 RX</para>
-			<graphic format="png" fileref="images/Kenwood/Cable/CH340-2.png" srccredit="neo" />
+			<graphic format="png"
+				fileref="images/Kenwood/Cable/CH340-2.png" srccredit="neo" />
 			<para>最后使用捆扎带固定，这样更耐用。</para>
 		</section>
 		<section>
 			<title>K 头写频线</title>
-			<graphic format="png" fileref="images/Kenwood/Cable/K-Cable.png" srccredit="neo" />
+			<graphic format="png"
+				fileref="images/Kenwood/Cable/K-Cable.png" srccredit="neo" />
 		</section>
 		<section>
 			<title>DB25 接口定义</title>
@@ -34,10 +121,12 @@ Pin #17	高频输出
 Pin #14	13.8V+
 			]]>
 			</screen>
-<!-- 			<ulink url="https://wiki.w3axl.com/index.php/NX5000_Mobiles">USB Programming Cable</ulink> -->
-			<ulink url="https://wiki.w3axl.com/index.php/NX5000_Interfacing">Kenwood NX-5000 DB25定义</ulink>
+			<!-- <ulink url="https://wiki.w3axl.com/index.php/NX5000_Mobiles">USB 
+				Programming Cable</ulink> -->
+			<ulink
+				url="https://wiki.w3axl.com/index.php/NX5000_Interfacing">Kenwood NX-5000 DB25定义</ulink>
 		</section>
-		
+
 	</section>
 	<section id="kenwood.mmdvm.nxdn">
 		<title>NX-800 MMDVM 配置</title>
@@ -47,79 +136,103 @@ Pin #14	13.8V+
 				<title> NX-800/NX-800E 设置</title>
 				<step>
 					<para>进入Windows 设备管理器，查看COM口设备信息</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/设备管理器.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/设备管理器.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>进入建武编程软件，这里使用的是 KPG-111D 5.20 版本</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/KPG-111D.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/KPG-111D.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>点击“设置”菜单，进入“通信端口设置”，选择COM5（对应设备管理器中的写频线端口）</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/通信端口.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/通信端口.png" srccredit="neo" />
 				</step>
 
 				<step>
 					<para>点击“机型”菜单，配置编程软件机型</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/产品信息.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/产品信息.png" srccredit="neo" />
 				</step>
 
 				<step>
-					<para>点击“编辑”菜单，进入“NXDN”，在进入NXDN 1，设置“单元ID（自身）”，这里输入你在RadioID.net 申请的 NXDN ID</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-1.png" srccredit="neo" />
+					<para>点击“编辑”菜单，进入“NXDN”，在进入NXDN 1，设置“单元ID（自身）”，这里输入你在RadioID.net
+						申请的 NXDN ID
+					</para>
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/NXDN-1.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>再进入 NXDN 2 菜单，设置“组 ID 列表”，写入 46000、46001、46010、46516</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
 				</step>
 
 				<step>
 					<para>完成所有配置之后，在“区域信息”中开始写频</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/区域信息.png" srccredit="neo" />
-					<para>例如第二行 438.800 发射接收相同，信道类型和发射模式选择NXDN，信道名称随意，注意：信道间隔（NXDN）一定要选择 甚窄带（6.25K 带宽）</para>
-					<para>RAN 解码/ RAN 编码，设置为 1 （对应 MMDVM 设置），RAN（Radio Access Number）无线电访问码，类似 DMR的色码。</para>
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/区域信息.png" srccredit="neo" />
+					<para>例如第二行 438.800
+						发射接收相同，信道类型和发射模式选择NXDN，信道名称随意，注意：信道间隔（NXDN）一定要选择 甚窄带（6.25K 带宽）
+					</para>
+					<para>RAN 解码/ RAN 编码，设置为 1 （对应 MMDVM 设置），RAN（Radio Access
+						Number）无线电访问码，类似 DMR的色码。
+					</para>
 					<para>如果你不上 MMDVM，仅仅是直频，上NXDN中继，可以使用 12.5K 窄带</para>
 				</step>
 
 				<step>
 					<para>最后，编辑上面438.800信道，点击下面的按钮“信道编辑”</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/信道编辑.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/信道编辑.png" srccredit="neo" />
 					<para>发射功率可以选择：低</para>
 					<para>可选信令（NXDN）选择：NXDN ID</para>
 					<para>PPT 选呼（NXDN）：组呼</para>
 					<para>ID 列表编号（NXDN）：1 （对应下面的序号）</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/NXDN-2.png" srccredit="neo" />
 				</step>
 			</procedure>
 		</section>
 		<section>
 			<title>Radio ID 申请 NXDN ID </title>
 			<ulink url="https://radioid.net">https://radioid.net</ulink>
-			<para>NXDN 系统设计 ID 容量是 65535 个，如果全球 Ham 都分配是不够用的，所以 Radio ID 关闭了 NXDN 申请通道，这困扰了我很长一段时间。</para>
+			<para>NXDN 系统设计 ID 容量是 65535 个，如果全球 Ham 都分配是不够用的，所以 Radio ID 关闭了 NXDN
+				申请通道，这困扰了我很长一段时间。
+			</para>
 			<para>申请 NXDN ID 需要给管理员申请，仅给有需要的Ham。</para>
 			<procedure>
 				<title>申请 NXDN 步骤</title>
 				<step>
 					<para>首先登陆 radioid.net 网站，点击 support</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-support.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/radioid-support.png"
+						srccredit="neo" />
 				</step>
 				<step>
 					<para>然后点击 Create New Issue</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-ticket.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/radioid-ticket.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>用你九年义务教育学会的塑料英语，写一封邮件</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-issue.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/radioid-issue.png" srccredit="neo" />
 					<para>实在不会写，就拿中文写，然后用翻译软件，或者人工智能翻译，翻译成英文，粘贴进去。</para>
 				</step>
 				<step>
 					<para>就像这样，不用担心你的英语水平，能描述清楚，老外能看懂就行，告诉他你需要一个 NXDN ID</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-issue-details.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/radioid-issue-details.png"
+						srccredit="neo" />
 					<para>提交之后就耐心等待，我上午提交的，下午就分配了。</para>
 					<para>注意：收到分配邮件之后，你还需要点一下添加按钮，那个页面我没有截图，已经看不到了。</para>
 				</step>
 				<step>
 					<para>进入自己页面就可以看到 NXDN ID 了</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/radioid-bg7nyt.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/radioid-bg7nyt.png" srccredit="neo" />
 				</step>
 			</procedure>
 		</section>
@@ -130,21 +243,29 @@ Pin #14	13.8V+
 				<title>MMDVM 配置</title>
 				<step>
 					<para>启用 NXDN 模式</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/MMDVM-NXDN.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>配置 NXDN ID（radioid.net 申请到的 NXDN ID）</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN-ID.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/MMDVM-NXDN-ID.png" srccredit="neo" />
 				</step>
 				<step>
 					<para>配置 NXDN 反射器</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM-NXDN-HOST.png" srccredit="neo" />
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/MMDVM-NXDN-HOST.png"
+						srccredit="neo" />
 				</step>
 				<step>
 					<para>配置完成之后进入仪表板</para>
-					<graphic format="png" fileref="images/Kenwood/NX-800/MMDVM.png" srccredit="neo" />
-					<para>注意：BH1NYR 是 NXDN 与 46001 转中呼号。也就是说 DMR/YSF 过来的信号都是 BH1NYR，然后你用 NXDN 回复，DMR/YSF 那边看到的是 BH1NYR，而不是你的呼号。</para>
-					<para>所以 NXDN 与 TG46001 是 back-to-back 方式连接的，也就是ham口中所说的背靠背连接。</para>
+					<graphic format="png"
+						fileref="images/Kenwood/NX-800/MMDVM.png" srccredit="neo" />
+					<para>注意：BH1NYR 是 NXDN 与 46001 转中呼号。也就是说 DMR/YSF 过来的信号都是
+						BH1NYR，然后你用 NXDN 回复，DMR/YSF 那边看到的是 BH1NYR，而不是你的呼号。
+					</para>
+					<para>所以 NXDN 与 TG46001 是 back-to-back 方式连接的，也就是ham口中所说的背靠背连接。
+					</para>
 					<para>只有都是 NXDN 设备，两者相互之间才能显示对方呼号。</para>
 				</step>
 			</procedure>
