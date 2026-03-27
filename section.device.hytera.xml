@@ -143,5 +143,15 @@
 			<para>如果出现误码率过高，需要进入车台工程模式，调整频偏。在 MMDVM 专家模式调整 TX/RX Offset 无效！中继板是在车台上调试。</para>	
 		</tip>
 	</section>
-	
+	<section id="hytera.hytalk">
+		<title>Hytera Hytalk</title>
+		<screen>
+		<![CDATA[
+手机安装好 HyTalk APP 后，设置服务器配置 IP 和端口号
+
+主服务器：8.218.137.199 50283
+备用服务器：43.129.83.124 50283		
+		]]>
+		</screen>
+	</section>
 </chapter>

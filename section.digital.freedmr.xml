@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<section id="brandmeister">
+	<title>BrandMeister</title>
+	<para>https://wiki.brandmeister.network/index.php/China</para>
+</section>
 <section id="FreeDMR">
 	<title>FreeDMR</title>
 	<para>项目地址：<ulink url="https://gitlab.hacknix.net/hacknix/FreeDMR" /></para>
 	<screen>
 	<![CDATA[
-	
+端口
+https://wiki.brandmeister.network/index.php/Network_Ports	
 	]]>
 	</screen>
 </section>
