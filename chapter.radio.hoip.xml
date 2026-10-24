@@ -95,6 +95,41 @@
 			</para>
 		</section>
 		<section>
+			<title>Yaelink T21 E2</title>
+			<para>刷新固件</para>
+			<para>在话机上按 Menu 键，然后 Status，可以查看IP地址。再浏览器上输入 http://ip地址，如果无法进入可能是固件较新，换成 https，进入网址后在设置中找到升级。</para>
+			<para>前往 https://support.yealink.com.cn/docs/sip-t21-p-e2/sip-t21-e2-t21p-e2-52-84-0-160-固件/a9e4fe8677154666b1a44c5f046ebf80 下载最新固件</para>
+			<para>上传固件完成升级。</para>
+			<para>如果你的话机出现 Welcome 始终无法进入系统，俗称刷机，刷成砖。不用担心，使用 tftp 刷机还有救。下面是我的刷机过程：</para>
+			<screen>
+			<![CDATA[
+把刷机固件放在 /Users/neo/Downloads/tftp 目录中
+neo@netkiller ~/D/tftp> pwd
+/Users/neo/Downloads/tftp
+
+neo@netkiller ~/D/tftp> ls
+T21P_E2.bin  T21P_E2.rfs  T21P_E2.rom
+
+苹果电脑安装 tftp-now 软件
+neo@netkiller ~/D/tftp> brew install tftp-now
+
+启动 tftp 服务
+neo@netkiller ~/D/tftp> tftp-now serve
+
+此时按住话机上右下角喇叭（免提键）不放，插入电源开几，进入 tftp 设置界面，使用方向键移动需求修改的 tftp IP地址。完成最后按“OK”键开始刷机。
+
+苹果电脑终端你会看到下面日志。
+			
+10:57AM INF read request: T21P_E2.bin requestId=01M5NXF8PVFNCWEJP2V905XQ7F
+10:57AM INF successfully handled bytes=1205971 requestId=01M5NXF8PVFNCWEJP2V905XQ7F
+10:57AM INF read request: T21P_E2.rfs requestId=01M5NXFNAJ0ZXJVVZJKCCR1VAC
+10:58AM INF successfully handled bytes=8388608 requestId=01M5NXFNAJ0ZXJVVZJKCCR1VAC
+10:58AM INF read request: T21P_E2.rom requestId=01M5NXH76H78MDQ76NCP56V2WY
+11:00AM INF successfully handled bytes=7572848 requestId=01M5NXH76H78MDQ76NCP56V2WY			
+			]]>
+			</screen>
+		</section>
+		<section id="Linksys">
 			<title>传统电话网关</title>
 			<para>Linksys 网关支持：G711(PCMA，PCMU),G723,G729A,G726(16/24/32/40),
 			</para>
